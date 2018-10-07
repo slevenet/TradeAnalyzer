@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.oanda.v20:v20:3.0.24">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.oanda.v20/v20/3.0.24/52c28fd12af56721ae28c6cc6f226fe2ecbae6a1/v20-3.0.24.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.oanda.v20/v20/3.0.24/16a88210cd007a4dac1a9fc7cc91bc9f369d9915/v20-3.0.24-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
