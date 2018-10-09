@@ -1,9 +1,8 @@
 package exchange.analyzer;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import exchange.analyzer.analytics.ExchangeDataAnalyzer;
-import exchange.analyzer.monitoring.ExchangeDataHandler;
+import exchange.analyzer.monitoring.ExchangeDataHandlerImpl;
 
 @SpringBootApplication
 public class Application {
@@ -12,8 +11,8 @@ public class Application {
 
       //  SpringApplication.run(Application.class, args);
 
-        ExchangeDataHandler exchangeDataHandler = new ExchangeDataHandler();
-        exchangeDataHandler.start();
+        ExchangeDataHandlerImpl exchangeDataHandlerImpl = new ExchangeDataHandlerImpl();
+        exchangeDataHandlerImpl.start();
 
         ExchangeDataAnalyzer exchangeDataAnalyzer = new ExchangeDataAnalyzer();
 

@@ -1,22 +1,10 @@
-package exchange.analyzer.monitoring.pullers;
+package exchange.analyzer.monitoring.pullers.trades;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.oanda.v20.Context;
+import exchange.analyzer.monitoring.pullers.abstraction.UnscheduledDataPuller;
 import org.apache.log4j.Logger;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
-public class TradeDataPuller extends DataPuller {
+public class TradeDataPuller extends UnscheduledDataPuller {
     private static Logger logger = Logger.getLogger(TradeDataPuller.class);
-
-    public TradeDataPuller(Context context) {
-        super(context);
-    }
 
     @Override
     public void run() {
