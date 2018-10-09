@@ -1,16 +1,9 @@
 package exchange.analyzer.monitoring.pullers;
 
-import com.oanda.v20.Context;
-import database.DatabaseStorage;
+public interface DataPuller {
 
-public abstract class DataPuller implements Runnable {
-
-    protected final Context context;
-    protected final DatabaseStorage databaseStorage = DatabaseStorage.getInstance();
-
-    public DataPuller(Context context) {
-        this.context = context;
-    }
-
-    protected abstract void pullData() throws Exception;
+    String
+            URI = "https://api-fxpractice.oanda.com",
+            APPLICATION = "json",
+            TOKEN = "42358b5440b084e5a6ff8ec540e3b998-65eed9e2dca8ffe6b3b7008dcb4f4781";
 }
