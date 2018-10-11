@@ -1,17 +1,19 @@
 package exchange.analyzer;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import exchange.analyzer.pullers.ExchangeDataHandlerImpl;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
+import static org.springframework.boot.SpringApplication.*;
+
+@EnableScheduling
 @SpringBootApplication
 public class Application {
 
     public static void main(String[] args) {
 
-      //  SpringApplication.run(Application.class, args);
-
-        ExchangeDataHandlerImpl exchangeDataHandlerImpl = new ExchangeDataHandlerImpl();
-        exchangeDataHandlerImpl.start();
+        ConfigurableApplicationContext run = SpringApplication.run(Application.class, args);
 
 
     }
