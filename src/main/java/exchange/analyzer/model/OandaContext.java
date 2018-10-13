@@ -7,10 +7,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class OandaContext {
-    private final Context context = new ContextBuilder(Constants.URI)
+    private static final Context context = new ContextBuilder(Constants.URI)
             .setApplication(Constants.APPLICATION)
             .setToken(Constants.TOKEN)
-            .build();;
+            .build();
 
     public Context getContext() {
         return context;

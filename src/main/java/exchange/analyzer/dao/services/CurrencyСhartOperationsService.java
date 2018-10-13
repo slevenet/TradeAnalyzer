@@ -1,5 +1,6 @@
 package exchange.analyzer.dao.services;
 
+import exchange.analyzer.Constants;
 import exchange.analyzer.dao.implementation.CurrencyСhartOperationsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
