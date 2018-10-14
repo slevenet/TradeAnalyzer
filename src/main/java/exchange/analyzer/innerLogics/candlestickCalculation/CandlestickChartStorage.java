@@ -1,4 +1,4 @@
-package exchange.analyzer.innerLogics.storage;
+package exchange.analyzer.innerLogics.candlestickCalculation;
 
 import com.oanda.v20.instrument.Candlestick;
 import com.oanda.v20.instrument.CandlestickGranularity;
@@ -15,21 +15,12 @@ public class CandlestickChartStorage {
 
     private static List<CandlestickChartModel> candlestickChartModels;
 
-    public CandlestickChartStorage() {
-
-        if (candlestickChartModels == null)
-            candlestickChartModels = new ArrayList<>();
-    }
-
     public void addChart(CandlestickChartModel chartModel) {
 
         candlestickChartModels.add(chartModel);
     }
 
     public void addChart(InstrumentName instrumentName, CandlestickGranularity granularity, List<Candlestick> candlesticks) {
-
-        if (candlestickChartModels == null)
-            candlestickChartModels = new ArrayList<>();
 
         for (CandlestickChartModel chartModel : candlestickChartModels) {
             if (chartModel.getInstrumentName().equals(instrumentName) && chartModel.getGranularity().equals(granularity)) {
@@ -46,6 +37,9 @@ public class CandlestickChartStorage {
         if (candlestickChartModels == null || candlestickChartModels.isEmpty())
             return null;
 
+       /* cand lestickChartModels.stream()
+                .filter(c -> c.getInstrumentName().equals(instrumentName) && c.getGranularity().equals(granularity));
+for*/
         for (CandlestickChartModel chartModel : candlestickChartModels) {
             if (chartModel.getInstrumentName().equals(instrumentName) && chartModel.getGranularity().equals(granularity)) {
                 List<Candlestick> candlesticks = chartModel.getCandlestickList();
@@ -54,5 +48,9 @@ public class CandlestickChartStorage {
         }
 
         return null;
+    }
+
+    private void def(){
+
     }
 }

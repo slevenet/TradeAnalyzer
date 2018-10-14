@@ -3,9 +3,11 @@ package exchange.analyzer.model;
 import com.oanda.v20.instrument.Candlestick;
 import com.oanda.v20.instrument.CandlestickGranularity;
 import com.oanda.v20.primitives.InstrumentName;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class CandlestickChartModel {
 

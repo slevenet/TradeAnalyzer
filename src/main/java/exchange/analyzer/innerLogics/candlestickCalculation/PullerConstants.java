@@ -1,4 +1,4 @@
-package exchange.analyzer.innerLogics.pullers;
+package exchange.analyzer.innerLogics.candlestickCalculation;
 
 public class PullerConstants {
 

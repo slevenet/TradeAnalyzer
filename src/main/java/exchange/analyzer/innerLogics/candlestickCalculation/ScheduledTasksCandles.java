@@ -1,4 +1,4 @@
-package exchange.analyzer.innerLogics.pullers;
+package exchange.analyzer.innerLogics.candlestickCalculation;
 
 import com.oanda.v20.ExecuteException;
 import com.oanda.v20.RequestException;
@@ -7,11 +7,13 @@ import com.oanda.v20.instrument.InstrumentCandlesRequest;
 import com.oanda.v20.instrument.InstrumentCandlesResponse;
 import com.oanda.v20.primitives.DateTime;
 import com.oanda.v20.primitives.InstrumentName;
-import exchange.analyzer.innerLogics.storage.CandlestickChartStorage;
+import exchange.analyzer.innerLogics.candlestickCalculation.abstracts.CandlestickClassifier;
 import exchange.analyzer.model.OandaContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class ScheduledTasksCandles {
@@ -20,6 +22,9 @@ public class ScheduledTasksCandles {
     private OandaContext oandaContext;
     @Autowired
     private CandlestickChartStorage chartStorage;
+
+    @Autowired
+    List<CandlestickClassifier> test;
 
     @Scheduled(fixedRate = 60 * PullerConstants.SECOND_FACTOR)
     public void reportCurrentTime() throws ExecuteException, RequestException {
