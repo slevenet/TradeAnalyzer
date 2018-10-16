@@ -6,39 +6,34 @@ import com.oanda.v20.primitives.DateTime;
 import com.oanda.v20.primitives.InstrumentName;
 import exchange.analyzer.model.CandlestickChartModel;
 import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Component
 public class CandlestickChartStorage {
 
-    private static List<CandlestickChartModel> candlestickChartModels;
+    private static Map<String, CandlestickChartModel> candlestickChartModels;
 
     public CandlestickChartStorage() {
-
-        if (candlestickChartModels == null)
-            candlestickChartModels = new ArrayList<>();
+        candlestickChartModels = new HashMap<>();
     }
 
     public void addChart(CandlestickChartModel chartModel) {
 
-        candlestickChartModels.add(chartModel);
+        String key = createKey(chartModel.getInstrumentName(), chartModel.getGranularity());
+        candlestickChartModels.put(key, chartModel);
     }
 
     public void addChart(InstrumentName instrumentName, CandlestickGranularity granularity, List<Candlestick> candlesticks) {
 
-        if (candlestickChartModels == null)
-            candlestickChartModels = new ArrayList<>();
-
-        for (CandlestickChartModel chartModel : candlestickChartModels) {
-            if (chartModel.getInstrumentName().equals(instrumentName) && chartModel.getGranularity().equals(granularity)) {
-                chartModel.getCandlestickList().addAll(candlesticks);
-                return;
-            }
+        String key = createKey(instrumentName, granularity);
+        if (candlestickChartModels.containsKey(key)) {
+            candlestickChartModels.get(key).addCandlesticks(candlesticks);
+            return;
         }
 
-        candlestickChartModels.add(new CandlestickChartModel(instrumentName, granularity, candlesticks));
+        candlestickChartModels.put(key, new CandlestickChartModel(instrumentName, granularity, candlesticks));
     }
 
     public DateTime getLastTimestamp(InstrumentName instrumentName, CandlestickGranularity granularity)
@@ -46,13 +41,15 @@ public class CandlestickChartStorage {
         if (candlestickChartModels == null || candlestickChartModels.isEmpty())
             return null;
 
-        for (CandlestickChartModel chartModel : candlestickChartModels) {
-            if (chartModel.getInstrumentName().equals(instrumentName) && chartModel.getGranularity().equals(granularity)) {
-                List<Candlestick> candlesticks = chartModel.getCandlestickList();
-                return candlesticks.get(candlesticks.size() - 1).getTime();
-            }
-        }
+        String key = createKey(instrumentName, granularity);
 
-        return null;
+        return candlestickChartModels.containsKey(key)
+                ? candlestickChartModels.get(key).getLastTimestamp()
+                : null;
+    }
+
+    private String createKey(InstrumentName instrumentName, CandlestickGranularity granularity)
+    {
+        return instrumentName + "_" + granularity;
     }
 }

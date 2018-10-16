@@ -16,36 +16,38 @@ import org.springframework.stereotype.Component;
 @Component
 public class ScheduledTasksCandles {
 
-    @Autowired
     private OandaContext oandaContext;
-    @Autowired
     private CandlestickChartStorage chartStorage;
+
+    @Autowired
+    public ScheduledTasksCandles(OandaContext oandaContext, CandlestickChartStorage chartStorage) {
+        this.oandaContext = oandaContext;
+        this.chartStorage = chartStorage;
+    }
 
     @Scheduled(fixedRate = 60 * PullerConstants.SECOND_FACTOR)
     public void reportCurrentTime() throws ExecuteException, RequestException {
 
         for (String currency : PullerConstants.currencies){
-
             InstrumentName instrumentName = new InstrumentName(currency);
 
-            InstrumentCandlesRequest candlesRequest = new InstrumentCandlesRequest(instrumentName);
-            candlesRequest.setPrice("M");
+            InstrumentCandlesRequest request = new InstrumentCandlesRequest(instrumentName);
+            request.setPrice(PullerConstants.price);
 
-            for (String neededGranularity : PullerConstants.granularities){
-                CandlestickGranularity granularity = CandlestickGranularity.valueOf(neededGranularity);
-                DateTime lastDateTime = chartStorage.getLastTimestamp(instrumentName, granularity);
+            for (String requestedGranularity : PullerConstants.granularities){
+                CandlestickGranularity granularity = CandlestickGranularity.valueOf(requestedGranularity);
 
-                candlesRequest.setGranularity(granularity);
-                if (lastDateTime != null)
-                    candlesRequest.setFrom(lastDateTime);
+                request.setGranularity(granularity);
 
-                InstrumentCandlesResponse candlesResponse = oandaContext.getContext().instrument.candles(candlesRequest);
+                DateTime lastTimestamp = chartStorage.getLastTimestamp(instrumentName, granularity);
+                if (lastTimestamp != null)
+                    request.setFrom(lastTimestamp);
+
+                InstrumentCandlesResponse candlesResponse = oandaContext.getContext().instrument.candles(request);
 
                 chartStorage.addChart(instrumentName, granularity, candlesResponse.getCandles());
             }
         }
-
-        System.out.println("_________________________________");
     }
 
 }
