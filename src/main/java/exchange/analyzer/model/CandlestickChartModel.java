@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 
 @Component
 public class CandlestickChartModel {
-    public EventManager events;
+    public EventManager events = new EventManager("update");
 
     public Map<String, List<Candlestick>> getCandlestickCharMap() {
         return candlestickCharMap;
@@ -55,7 +55,7 @@ public class CandlestickChartModel {
     public void addCandlestickCharMap(String key, List<Candlestick> value){
         candlestickCharMap.putIfAbsent(key,value);
         candlestickCharMap.computeIfPresent(key, (a,b)-> Stream.concat(b.stream(),value.stream()).collect(Collectors.toList()));
-        events.notify("save");
+        events.notify("update");
 
     }
 
