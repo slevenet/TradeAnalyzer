@@ -4,9 +4,22 @@ import com.oanda.v20.instrument.Candlestick;
 import com.oanda.v20.instrument.CandlestickGranularity;
 import com.oanda.v20.primitives.DateTime;
 import com.oanda.v20.primitives.InstrumentName;
-import java.util.List;
+import exchange.analyzer.innerLogics.candlesCalculation.EventManager;
+import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+@Component
 public class CandlestickChartModel {
+    public EventManager events = new EventManager("update");
+
+    public Map<String, List<Candlestick>> getCandlestickCharMap() {
+        return candlestickCharMap;
+    }
 
     private InstrumentName instrumentName;
     private CandlestickGranularity granularity;
@@ -14,13 +27,8 @@ public class CandlestickChartModel {
 
     private List<Candlestick> candlestickList;
 
-    public CandlestickChartModel(InstrumentName instrumentName,
-                                 CandlestickGranularity granularity,
-                                 List<Candlestick> candlestickList) {
-        this.instrumentName = instrumentName;
-        this.granularity = granularity;
-        this.candlestickList = candlestickList;
-    }
+    private Map<String, List<Candlestick>> candlestickCharMap = new HashMap<>();
+
 
     public void addCandlesticks(List<Candlestick> candlestickList)
     {
@@ -43,4 +51,12 @@ public class CandlestickChartModel {
     public DateTime getLastTimestamp() {
         return lastTimestamp;
     }
+
+    public void addCandlestickCharMap(String key, List<Candlestick> value){
+        candlestickCharMap.putIfAbsent(key,value);
+        candlestickCharMap.computeIfPresent(key, (a,b)-> Stream.concat(b.stream(),value.stream()).collect(Collectors.toList()));
+        events.notify("update");
+
+    }
+
 }

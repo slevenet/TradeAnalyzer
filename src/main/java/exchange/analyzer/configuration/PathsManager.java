@@ -1,7 +1,6 @@
 package exchange.analyzer.configuration;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
+public class PathsManager {
 
-public final class PathsManager {
+    public static final String CFG_PACKAGE = "/cfg";
 }
