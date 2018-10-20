@@ -1,6 +1,6 @@
-package exchange.analyzer.innerLogics.candlesCalculation;
+package exchange.analyzer.innerLogics.calculations.candlestick;
 
-import exchange.analyzer.innerLogics.candlesCalculation.interfaces.EventListener;
+import exchange.analyzer.innerLogics.calculations.candlestick.interfaces.EventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,7 +8,8 @@ import java.util.List;
 import java.util.Map;
 
 public class EventManager {
-    Map<String, List<EventListener>> listeners = new HashMap<>();
+
+    private Map<String, List<EventListener>> listeners = new HashMap<>();
 
     public EventManager(String... operations) {
         for (String operation : operations) {

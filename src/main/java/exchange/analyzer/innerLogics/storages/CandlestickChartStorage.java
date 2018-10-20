@@ -1,10 +1,12 @@
-package exchange.analyzer.innerLogics.candlesCalculation;
+package exchange.analyzer.innerLogics.storages;
 
 import com.oanda.v20.instrument.Candlestick;
 import com.oanda.v20.instrument.CandlestickGranularity;
 import com.oanda.v20.primitives.DateTime;
 import com.oanda.v20.primitives.InstrumentName;
-import exchange.analyzer.model.CandlestickChartModel;
+import exchange.analyzer.innerLogics.calculations.candlestick.Events;
+import exchange.analyzer.innerLogics.calculations.candlestick.NotificationListener;
+import exchange.analyzer.model.CandlestickChart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,22 +17,23 @@ import java.util.List;
 public class CandlestickChartStorage {
 
     @Autowired
-   private  CandlestickChartModel candlestickChartModel;
-
+    private CandlestickChart candlestickChart;
     @Autowired
     private NotificationListener notificationListener;
 
-    public void addChart(InstrumentName instrumentName, CandlestickGranularity granularity, List<Candlestick> candlesticks) {
+    public void addChart(InstrumentName instrumentName,
+                         CandlestickGranularity granularity,
+                         List<Candlestick> candlesticks) {
         String key = createKey(instrumentName, granularity);
-        candlestickChartModel.addCandlestickCharMap(key,candlesticks);
+        candlestickChart.addCandlestickMap(key,candlesticks);
     }
 
     public DateTime getLastTimestamp(InstrumentName instrumentName, CandlestickGranularity granularity) {
-        if (candlestickChartModel.getCandlestickCharMap() == null || candlestickChartModel.getCandlestickCharMap().isEmpty())
+        if (candlestickChart.getCandlestickMap() == null)
             return null;
 
-        return candlestickChartModel.getCandlestickCharMap().containsKey(createKey(instrumentName, granularity))
-                ? candlestickChartModel.getLastTimestamp()
+        return candlestickChart.getCandlestickMap().containsKey(createKey(instrumentName, granularity))
+                ? candlestickChart.getLastTimestamp()
                 : null;
     }
 
@@ -41,6 +44,6 @@ public class CandlestickChartStorage {
 
     @PostConstruct
     private void observable(){
-        candlestickChartModel.events.subscribe("update", notificationListener);
+        candlestickChart.events.subscribe(Events.UPDATE, notificationListener);
     }
 }

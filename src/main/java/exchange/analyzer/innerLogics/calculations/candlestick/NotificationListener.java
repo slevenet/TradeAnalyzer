@@ -1,7 +1,7 @@
-package exchange.analyzer.innerLogics.candlesCalculation;
+package exchange.analyzer.innerLogics.calculations.candlestick;
 
-import exchange.analyzer.innerLogics.candlesCalculation.abstracts.CandlestickClassifier;
-import exchange.analyzer.innerLogics.candlesCalculation.interfaces.EventListener;
+import exchange.analyzer.innerLogics.calculations.candlestick.abstracts.CandlestickClassifier;
+import exchange.analyzer.innerLogics.calculations.candlestick.interfaces.EventListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,9 +16,8 @@ public class NotificationListener implements EventListener {
 
     @PostConstruct
     private void linkedObs(){
-        for(int i = 0; i < candlestickClassifierList.size() - 1; i++){
+        for(int i = 0; i < candlestickClassifierList.size() - 1 ; i++)
             candlestickClassifierList.get(i).linkWith(candlestickClassifierList.get(i + 1));
-        }
     }
 
     @Override
