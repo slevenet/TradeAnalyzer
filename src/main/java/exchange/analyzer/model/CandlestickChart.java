@@ -4,7 +4,8 @@ import com.oanda.v20.instrument.Candlestick;
 import com.oanda.v20.instrument.CandlestickGranularity;
 import com.oanda.v20.primitives.DateTime;
 import com.oanda.v20.primitives.InstrumentName;
-import exchange.analyzer.innerLogics.candlesCalculation.EventManager;
+import exchange.analyzer.innerLogics.calculations.candlestick.EventManager;
+import exchange.analyzer.innerLogics.calculations.candlestick.Events;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -14,12 +15,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Component
-public class CandlestickChartModel {
-    public EventManager events = new EventManager("update");
+public class CandlestickChart {
 
-    public Map<String, List<Candlestick>> getCandlestickCharMap() {
-        return candlestickCharMap;
-    }
+    public EventManager events = new EventManager(Events.UPDATE);
 
     private InstrumentName instrumentName;
     private CandlestickGranularity granularity;
@@ -27,13 +25,15 @@ public class CandlestickChartModel {
 
     private List<Candlestick> candlestickList;
 
-    private Map<String, List<Candlestick>> candlestickCharMap = new HashMap<>();
+    private Map<String, List<Candlestick>> candlestickMap = new HashMap<>();
 
-
-    public void addCandlesticks(List<Candlestick> candlestickList)
-    {
+    public void addCandlesticks(List<Candlestick> candlestickList) {
         this.candlestickList.addAll(candlestickList);
         this.lastTimestamp = candlestickList.get(candlestickList.size() - 1).getTime();
+    }
+
+    public Map<String, List<Candlestick>> getCandlestickMap() {
+        return candlestickMap;
     }
 
     public CandlestickGranularity getGranularity() {
@@ -52,11 +52,12 @@ public class CandlestickChartModel {
         return lastTimestamp;
     }
 
-    public void addCandlestickCharMap(String key, List<Candlestick> value){
-        candlestickCharMap.putIfAbsent(key,value);
-        candlestickCharMap.computeIfPresent(key, (a,b)-> Stream.concat(b.stream(),value.stream()).collect(Collectors.toList()));
-        events.notify("update");
-
+    public void addCandlestickMap(String key, List<Candlestick> value){
+        candlestickMap.putIfAbsent(key,value);
+        candlestickMap.computeIfPresent(
+                key,
+                (a, b) -> Stream.concat(b.stream(), value.stream()).collect(Collectors.toList()));
+        events.notify(Events.UPDATE);
     }
 
 }
