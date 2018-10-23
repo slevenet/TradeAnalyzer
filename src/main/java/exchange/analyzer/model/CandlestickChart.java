@@ -2,12 +2,16 @@ package exchange.analyzer.model;
 
 import com.oanda.v20.instrument.Candlestick;
 import com.oanda.v20.instrument.CandlestickGranularity;
+import com.oanda.v20.primitives.Currency;
 import com.oanda.v20.primitives.DateTime;
 import com.oanda.v20.primitives.InstrumentName;
 import exchange.analyzer.innerLogics.calculations.candlestick.EventManager;
 import exchange.analyzer.innerLogics.calculations.candlestick.Events;
+import exchange.analyzer.innerLogics.keyManager.CurrencyKey;
+import exchange.analyzer.innerLogics.keyManager.KeyManager;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,40 +23,9 @@ public class CandlestickChart {
 
     public EventManager events = new EventManager(Events.UPDATE);
 
-    private InstrumentName instrumentName;
-    private CandlestickGranularity granularity;
-    private DateTime lastTimestamp;
+    private Map<CurrencyKey, List<Candlestick>> candlestickMap = new HashMap<>();
 
-    private List<Candlestick> candlestickList;
-
-    private Map<String, List<Candlestick>> candlestickMap = new HashMap<>();
-
-    public void addCandlesticks(List<Candlestick> candlestickList) {
-        this.candlestickList.addAll(candlestickList);
-        this.lastTimestamp = candlestickList.get(candlestickList.size() - 1).getTime();
-    }
-
-    public Map<String, List<Candlestick>> getCandlestickMap() {
-        return candlestickMap;
-    }
-
-    public CandlestickGranularity getGranularity() {
-        return granularity;
-    }
-
-    public List<Candlestick> getCandlestickList() {
-        return candlestickList;
-    }
-
-    public InstrumentName getInstrumentName() {
-        return instrumentName;
-    }
-
-    public DateTime getLastTimestamp() {
-        return lastTimestamp;
-    }
-
-    public void addCandlestickMap(String key, List<Candlestick> value){
+    public void addCandlestickMap(CurrencyKey key, List<Candlestick> value){
         candlestickMap.putIfAbsent(key,value);
         candlestickMap.computeIfPresent(
                 key,
@@ -60,4 +33,17 @@ public class CandlestickChart {
         events.notify(Events.UPDATE);
     }
 
+    public List<Candlestick> getCandles(CurrencyKey currencyKey){
+
+        return candlestickMap.putIfAbsent(currencyKey, new ArrayList<>());
+    }
+
+    public DateTime getLastTimestamp(InstrumentName instrument, CandlestickGranularity granularity){
+        CurrencyKey key = KeyManager.getKey(instrument, granularity);
+        List<Candlestick> list = candlestickMap.getOrDefault(key, null);
+
+        return list != null && !list.isEmpty()
+                ? list.stream().reduce((a, b) -> b).get().getTime()
+                : null;
+    }
 }
