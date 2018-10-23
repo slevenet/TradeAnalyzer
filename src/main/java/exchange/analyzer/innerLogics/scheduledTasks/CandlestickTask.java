@@ -7,12 +7,16 @@ import com.oanda.v20.primitives.DateTime;
 import com.oanda.v20.primitives.InstrumentName;
 import exchange.analyzer.innerLogics.scheduledTasks.abstracts.OandaTask;
 import exchange.analyzer.innerLogics.storages.CandlestickChartStorage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
 public class CandlestickTask extends OandaTask {
+
+    private static final Logger logger = LoggerFactory.getLogger(CandlestickTask.class);
 
     @Autowired
     private CandlestickChartStorage chartStorage;
@@ -39,7 +43,7 @@ public class CandlestickTask extends OandaTask {
                     InstrumentCandlesResponse candlesResponse = oandaContext.getContext().instrument.candles(request);
                     chartStorage.addChart(instrumentName, granularity, candlesResponse.getCandles());
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    logger.error("Error during candlestick task", e);
                 }
             });
         });

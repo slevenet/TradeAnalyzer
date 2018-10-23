@@ -7,12 +7,16 @@ import com.oanda.v20.instrument.OrderBook;
 import com.oanda.v20.primitives.InstrumentName;
 import exchange.analyzer.innerLogics.scheduledTasks.abstracts.OandaTask;
 import exchange.analyzer.innerLogics.storages.OrderBookChartStorage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
 public class OrderBookTask extends OandaTask {
+
+    private static final Logger logger = LoggerFactory.getLogger(OrderBookTask.class);
 
     @Autowired
     private OrderBookChartStorage storage;
@@ -28,7 +32,7 @@ public class OrderBookTask extends OandaTask {
                 OrderBook orderBook = oandaContext.getContext().instrument.orderBook(request).getOrderBook();
                 storage.addOrderBook(orderBook);
             } catch (RequestException | ExecuteException e) {
-                e.printStackTrace();
+                logger.error("Error during order book task", e);
             }
         });
     }

@@ -2,7 +2,6 @@ package exchange.analyzer.model;
 
 import com.oanda.v20.instrument.Candlestick;
 import com.oanda.v20.instrument.CandlestickGranularity;
-import com.oanda.v20.primitives.Currency;
 import com.oanda.v20.primitives.DateTime;
 import com.oanda.v20.primitives.InstrumentName;
 import exchange.analyzer.innerLogics.calculations.candlestick.EventManager;
