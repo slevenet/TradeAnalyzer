@@ -5,23 +5,24 @@ import com.oanda.v20.instrument.InstrumentCandlesRequest;
 import com.oanda.v20.instrument.InstrumentCandlesResponse;
 import com.oanda.v20.primitives.DateTime;
 import com.oanda.v20.primitives.InstrumentName;
+import exchange.analyzer.innerLogics.scheduledTasks.abstracts.OandaTask;
 import exchange.analyzer.innerLogics.storages.CandlestickChartStorage;
-import exchange.analyzer.model.OandaContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CandlestickTask {
+public class CandlestickTask extends OandaTask {
 
-    @Autowired
-    private OandaContext oandaContext;
+    private static final Logger logger = LoggerFactory.getLogger(CandlestickTask.class);
+
     @Autowired
     private CandlestickChartStorage chartStorage;
 
     @Scheduled(fixedRate = 15 * ScheduleConstants.MINUTE_FACTOR)
-    public void reportCurrentTime()  {
-
+    public void process(){
         ScheduleConstants.currencies.forEach(currency ->
         {
             InstrumentName instrumentName = new InstrumentName(currency);
@@ -38,14 +39,12 @@ public class CandlestickTask {
                 if (lastTimestamp != null)
                     request.setFrom(lastTimestamp);
 
-                InstrumentCandlesResponse candlesResponse = null;
                 try {
-                    candlesResponse = oandaContext.getContext().instrument.candles(request);
+                    InstrumentCandlesResponse candlesResponse = oandaContext.getContext().instrument.candles(request);
+                    chartStorage.addChart(instrumentName, granularity, candlesResponse.getCandles());
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    logger.error("Error during candlestick task", e);
                 }
-
-                chartStorage.addChart(instrumentName, granularity, candlesResponse.getCandles());
             });
         });
     }
