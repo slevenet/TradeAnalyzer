@@ -1,0 +1,20 @@
+<h2>My </h2>
+<ul class="orderbooks">
+  <li *ngFor="let orderchart of OrderBookCharts"
+      [class.selected]="orderchart === selectesOrderBookChart"
+      (click)="onSelect(orderchart)">
+    <span class="badge">{{orderchart.id}}</span> {{orderchart.test}}
+  </li>
+</ul>
+
+<div *ngIf="selectesOrderBookChart">
+
+  <h2>{{selectesOrderBookChart.test | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectesOrderBookChart.id}}</div>
+  <div>
+    <label>test:
+      <input [(ngModel)]="selectesOrderBookChart.test" placeholder="test">
+    </label>
+  </div>
+
+</div>
