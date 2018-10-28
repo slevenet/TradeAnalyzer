@@ -1,4 +1,4 @@
-package exchange.analyzer.model;
+package exchange.analyzer.model.charts;
 
 import com.oanda.v20.instrument.OrderBook;
 import com.oanda.v20.primitives.DateTime;

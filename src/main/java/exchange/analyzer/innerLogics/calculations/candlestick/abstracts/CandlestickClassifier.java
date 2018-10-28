@@ -16,8 +16,6 @@ public abstract class CandlestickClassifier {
     public abstract String check(Candlestick candlestick);
 
     public String checkNext(Candlestick candlestick) {
-        if (next == null)
-            return Classifications.NONE;
 
         return next == null ? Classifications.NONE : next.check(candlestick);
     }

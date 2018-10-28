@@ -23,14 +23,14 @@ public class CandlestickTask extends OandaTask {
 
     @Scheduled(fixedRate = 15 * ScheduleConstants.MINUTE_FACTOR)
     public void process(){
-        ScheduleConstants.currencies.forEach(currency ->
+        ScheduleConstants.CURRENCIES.forEach(currency ->
         {
             InstrumentName instrumentName = new InstrumentName(currency);
 
             InstrumentCandlesRequest request = new InstrumentCandlesRequest(instrumentName);
             request.setPrice(ScheduleConstants.price);
 
-            ScheduleConstants.granularities.forEach(requestedGranularity ->
+            ScheduleConstants.GRANULARITIES.forEach(requestedGranularity ->
             {
                 CandlestickGranularity granularity = CandlestickGranularity.valueOf(requestedGranularity);
                 request.setGranularity(granularity);

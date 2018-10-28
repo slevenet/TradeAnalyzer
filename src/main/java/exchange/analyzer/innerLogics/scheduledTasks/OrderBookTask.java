@@ -23,7 +23,7 @@ public class OrderBookTask extends OandaTask {
 
     @Scheduled(fixedRate = 20 * ScheduleConstants.SECOND_FACTOR)
     public void process(){
-        ScheduleConstants.currencies.forEach(currency ->
+        ScheduleConstants.CURRENCIES.forEach(currency ->
         {
             InstrumentName instrumentName       = new InstrumentName(currency);
             InstrumentOrderBookRequest request  = new InstrumentOrderBookRequest(instrumentName);
