@@ -2,7 +2,7 @@ package exchange.analyzer.innerLogics.storages;
 
 import com.oanda.v20.instrument.OrderBook;
 import com.oanda.v20.primitives.InstrumentName;
-import exchange.analyzer.model.OrderBookChart;
+import exchange.analyzer.model.charts.OrderBookChart;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

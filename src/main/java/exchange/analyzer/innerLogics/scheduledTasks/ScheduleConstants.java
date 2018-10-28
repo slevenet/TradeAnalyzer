@@ -11,7 +11,8 @@ final class ScheduleConstants {
             MINUTE_FACTOR = SECOND_FACTOR * 60;
 
     static final String price = "ABM";
-    static final List<String> currencies = new ArrayList<>(Arrays.asList("EUR_USD"));
-    static final List<String> granularities = new ArrayList<>(Arrays.asList("M15", "M30", "H1", "H4", "D"));
+    static final List<String> CURRENCIES = new ArrayList<>(Arrays.asList("EUR_USD"));
+    static final List<String> GRANULARITIES = new ArrayList<>(Arrays.asList("M15", "M30", "H1", "H4", "D"));
+    static final List<Integer> PATTERN_PERIODS = new ArrayList<>(Arrays.asList(900, 1800, 3600, 14400, 86400));
 
 }

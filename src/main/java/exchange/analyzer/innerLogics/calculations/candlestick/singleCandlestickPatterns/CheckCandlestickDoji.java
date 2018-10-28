@@ -3,7 +3,6 @@ package exchange.analyzer.innerLogics.calculations.candlestick.singleCandlestick
 import com.oanda.v20.instrument.Candlestick;
 import exchange.analyzer.innerLogics.calculations.candlestick.Classifications;
 import exchange.analyzer.innerLogics.calculations.candlestick.abstracts.CandlestickClassifier;
-import exchange.analyzer.model.CandlestickChart;
 import org.springframework.stereotype.Component;
 
 @Component

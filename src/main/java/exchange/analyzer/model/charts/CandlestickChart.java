@@ -1,4 +1,4 @@
-package exchange.analyzer.model;
+package exchange.analyzer.model.charts;
 
 import com.oanda.v20.instrument.Candlestick;
 import com.oanda.v20.instrument.CandlestickGranularity;
@@ -20,7 +20,7 @@ import java.util.stream.Stream;
 @Component
 public class CandlestickChart {
 
-    public EventManager events = new EventManager(Events.UPDATE);
+    public final EventManager events = new EventManager(Events.UPDATE);
 
     private Map<CurrencyKey, List<Candlestick>> candlestickMap = new HashMap<>();
 
