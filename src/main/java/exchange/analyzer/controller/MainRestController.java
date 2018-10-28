@@ -1,14 +1,24 @@
 package exchange.analyzer.controller;
 
+import com.oanda.v20.primitives.InstrumentName;
+import exchange.analyzer.innerLogics.storages.OrderBookChartStorage;
+import exchange.analyzer.model.OrderBookChart;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
 
 @RestController
 public class MainRestController {
 
+    @Autowired
+    OrderBookChartStorage orderBookChartStorage;
+
     @GetMapping("/rest")
-    public String home()
+    public Map<InstrumentName, OrderBookChart> home()
     {
-        return "Hello, World!2";
+        return orderBookChartStorage.getOrderBookChartMap();
+
     }
 }

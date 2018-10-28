@@ -7,13 +7,15 @@ import { OrderBookChartComponent } from './order-book-chart/order-book-chart.com
 import {FormsModule} from "@angular/forms";
 import { OrderBookDetailComponent } from './order-book-detail/order-book-detail.component';
 import { MessageComponent } from './message/message.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
     OrderBookChartComponent,
     OrderBookDetailComponent,
-    MessageComponent
+    MessageComponent,
+    HttpClientModule
   ],
   imports: [
     BrowserModule,
