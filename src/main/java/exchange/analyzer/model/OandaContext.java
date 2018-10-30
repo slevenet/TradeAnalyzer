@@ -2,7 +2,7 @@ package exchange.analyzer.model;
 
 import com.oanda.v20.Context;
 import com.oanda.v20.ContextBuilder;
-import exchange.analyzer.configuration.Constants;
+import exchange.analyzer.constants.Constants;
 import org.springframework.stereotype.Component;
 
 @Component
