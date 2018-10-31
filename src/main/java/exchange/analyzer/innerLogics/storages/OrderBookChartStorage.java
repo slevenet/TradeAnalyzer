@@ -23,4 +23,8 @@ public class OrderBookChartStorage {
 
         orderBookChartMap.putIfAbsent(chart.getInstrumentName(), chart);
     }
+
+    public Map<InstrumentName, OrderBookChart> getOrderBookChartMap() {
+        return orderBookChartMap;
+    }
 }

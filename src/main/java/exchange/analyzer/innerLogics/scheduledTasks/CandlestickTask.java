@@ -5,23 +5,21 @@ import com.oanda.v20.instrument.InstrumentCandlesRequest;
 import com.oanda.v20.instrument.InstrumentCandlesResponse;
 import com.oanda.v20.primitives.DateTime;
 import com.oanda.v20.primitives.InstrumentName;
+import exchange.analyzer.constants.ScheduleConstants;
 import exchange.analyzer.innerLogics.scheduledTasks.abstracts.OandaTask;
 import exchange.analyzer.innerLogics.storages.CandlestickChartStorage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class CandlestickTask extends OandaTask {
 
     private static final Logger logger = LoggerFactory.getLogger(CandlestickTask.class);
 
-    @Autowired
+  //  @Autowired
     private CandlestickChartStorage chartStorage;
 
-    @Scheduled(fixedRate = 15 * ScheduleConstants.MINUTE_FACTOR)
+  //  @Scheduled(fixedRate = 15 * ScheduleConstants.MINUTE_FACTOR)
     public void process(){
         ScheduleConstants.CURRENCIES.forEach(currency ->
         {
