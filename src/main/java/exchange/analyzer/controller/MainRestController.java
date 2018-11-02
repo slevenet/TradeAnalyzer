@@ -13,7 +13,7 @@ import java.util.Map;
 public class MainRestController {
 
     @Autowired
-    OrderBookChartStorage orderBookChartStorage;
+    private OrderBookChartStorage orderBookChartStorage;
 
     @GetMapping("/rest")
     public Map<InstrumentName, OrderBookChart> home()

@@ -1,4 +1,4 @@
-package exchange.analyzer.model.autochartist;
+package exchange.analyzer.model.autochartist.chartpattern;
 
 import java.io.Serializable;
 
@@ -13,7 +13,11 @@ public class Signal implements Serializable{
     public Signal() {
     }
 
-    public Signal(Data data, String type, String instrument, long id, Meta meta) {
+    public Signal(Data data,
+                  String type,
+                  String instrument,
+                  long id,
+                  Meta meta) {
         this.instrument = instrument;
         this.data   = data;
         this.type   = type;

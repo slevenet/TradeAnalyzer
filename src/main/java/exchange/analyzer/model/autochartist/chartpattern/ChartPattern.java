@@ -1,4 +1,4 @@
-package exchange.analyzer.model.autochartist;
+package exchange.analyzer.model.autochartist.chartpattern;
 
 import java.io.Serializable;
 import java.util.List;
@@ -11,7 +11,8 @@ public class ChartPattern implements Serializable{
     public ChartPattern() {
     }
 
-    public ChartPattern(String provider, List<Signal> signals) {
+    public ChartPattern(String provider,
+                        List<Signal> signals) {
         this.provider = provider;
         this.signals = signals;
     }
