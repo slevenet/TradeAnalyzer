@@ -1,4 +1,4 @@
-package exchange.analyzer.innerLogics.keyManager;
+package exchange.analyzer.configuration.common.keyManager;
 
 import com.oanda.v20.instrument.CandlestickGranularity;
 import com.oanda.v20.primitives.InstrumentName;

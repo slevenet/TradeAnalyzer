@@ -1,4 +1,4 @@
-package exchange.analyzer.constants;
+package exchange.analyzer.configuration.common.constants;
 
 public interface Constants {
     String

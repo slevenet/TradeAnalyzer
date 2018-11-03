@@ -15,7 +15,7 @@ import java.util.Map;
 public class AutochartistOperationsImpl implements AutochartistOperations {
 
     @Autowired
-    ChartPatternStorage chartPatternStorage;
+    private ChartPatternStorage chartPatternStorage;
 
     public Map<Long, Signal> getPatterns() {
         return chartPatternStorage.getPatterns();

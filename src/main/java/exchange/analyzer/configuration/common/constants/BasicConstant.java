@@ -1,4 +1,4 @@
-package exchange.analyzer.constants;
+package exchange.analyzer.configuration.common.constants;
 
 import java.util.ArrayList;
 import java.util.Arrays;

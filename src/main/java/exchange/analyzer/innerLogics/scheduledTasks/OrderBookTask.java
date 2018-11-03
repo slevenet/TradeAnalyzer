@@ -5,7 +5,8 @@ import com.oanda.v20.RequestException;
 import com.oanda.v20.instrument.InstrumentOrderBookRequest;
 import com.oanda.v20.instrument.OrderBook;
 import com.oanda.v20.primitives.InstrumentName;
-import exchange.analyzer.constants.ScheduleConstants;
+import exchange.analyzer.configuration.common.constants.BasicConstant;
+import exchange.analyzer.configuration.common.constants.ScheduleConstants;
 import exchange.analyzer.innerLogics.scheduledTasks.abstracts.OandaTask;
 import exchange.analyzer.innerLogics.storages.OrderBookChartStorage;
 import org.slf4j.Logger;
@@ -24,7 +25,7 @@ public class OrderBookTask extends OandaTask {
 
     @Scheduled(fixedRate = 20 * ScheduleConstants.SECOND_FACTOR)
     public void process(){
-        ScheduleConstants.CURRENCIES.forEach(currency ->
+        BasicConstant.SUPPORTED_INSTRUMENT.forEach(currency ->
         {
             InstrumentName instrumentName       = new InstrumentName(currency);
             InstrumentOrderBookRequest request  = new InstrumentOrderBookRequest(instrumentName);

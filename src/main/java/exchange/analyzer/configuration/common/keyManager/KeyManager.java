@@ -1,4 +1,4 @@
-package exchange.analyzer.innerLogics.keyManager;
+package exchange.analyzer.configuration.common.keyManager;
 
 import com.oanda.v20.instrument.CandlestickGranularity;
 import com.oanda.v20.primitives.InstrumentName;
@@ -11,13 +11,12 @@ public class KeyManager {
 
     private static List<CurrencyKey> keys = new ArrayList<>();
 
-    private KeyManager() {
-    }
+    private KeyManager() {}
 
-    public static CurrencyKey getKey(InstrumentName instrumentName, CandlestickGranularity granularity) {
+    public static CurrencyKey getKey(InstrumentName instrumentName,
+                                     CandlestickGranularity granularity) {
         Optional<CurrencyKey> key = keys.stream()
-                .filter(currencyKey -> currencyKey.getCurrency()
-                        .equals(instrumentName))
+                .filter(currencyKey -> currencyKey.getCurrency().equals(instrumentName))
                 .filter(currencyKey -> currencyKey.getGranularity().equals(granularity))
                 .findAny();
 

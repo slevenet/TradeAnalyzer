@@ -1,7 +1,7 @@
 package exchange.analyzer.innerLogics.scheduledTasks;
 
-import exchange.analyzer.constants.Constants;
-import exchange.analyzer.constants.ScheduleConstants;
+import exchange.analyzer.configuration.common.constants.Constants;
+import exchange.analyzer.configuration.common.constants.ScheduleConstants;
 import exchange.analyzer.innerLogics.storages.ChartPatternStorage;
 import exchange.analyzer.model.autochartist.chartpattern.ChartPattern;
 import exchange.analyzer.model.autochartist.chartpattern.ChartPatternRequest;
