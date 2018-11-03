@@ -10,6 +10,7 @@ import exchange.analyzer.innerLogics.scheduledTasks.abstracts.OandaTask;
 import exchange.analyzer.innerLogics.storages.CandlestickChartStorage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.scheduling.annotation.Scheduled;
 
 //@Component
 public class CandlestickTask extends OandaTask {
@@ -19,7 +20,7 @@ public class CandlestickTask extends OandaTask {
   //  @Autowired
     private CandlestickChartStorage chartStorage;
 
-  //  @Scheduled(fixedRate = 15 * ScheduleConstants.MINUTE_FACTOR)
+    @Scheduled(fixedRate = 15 * ScheduleConstants.MINUTE_FACTOR)
     public void process(){
         ScheduleConstants.CURRENCIES.forEach(currency ->
         {
