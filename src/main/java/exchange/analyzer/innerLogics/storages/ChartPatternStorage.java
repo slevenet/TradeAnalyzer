@@ -1,8 +1,8 @@
 package exchange.analyzer.innerLogics.storages;
 
 import exchange.analyzer.innerLogics.Util;
-import exchange.analyzer.model.autochartist.ChartPattern;
-import exchange.analyzer.model.autochartist.Signal;
+import exchange.analyzer.model.autochartist.chartpattern.ChartPattern;
+import exchange.analyzer.model.autochartist.chartpattern.Signal;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -15,7 +15,8 @@ public class ChartPatternStorage {
 
     public void addPatterns(ChartPattern chartPattern){
 
-        chartPattern.getSignals().forEach(signal -> {
+        chartPattern.getSignals().forEach(signal ->
+        {
             if (Util.isSupportedInstrument(signal.getInstrument()))
                 patterns.putIfAbsent(signal.getId(), signal);
         });

@@ -1,4 +1,4 @@
-package exchange.analyzer.model.autochartist;
+package exchange.analyzer.model.autochartist.chartpattern;
 
 import java.io.Serializable;
 
@@ -10,7 +10,8 @@ public class Points implements Serializable{
     public Points() {
     }
 
-    public Points(Point support, Point resistance) {
+    public Points(Point support,
+                  Point resistance) {
         this.support = support;
         this.resistance = resistance;
     }

@@ -1,4 +1,4 @@
-package exchange.analyzer.model.autochartist;
+package exchange.analyzer.model.autochartist.chartpattern;
 
 import org.springframework.util.StringUtils;
 
