@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { OrderBookChartComponent } from './order-book-chart/order-book-chart.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { AutochartistComponent } from './autochartist/autochartist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OrderBookChartComponent,
-    HttpClientModule
+    HttpClientModule,
+    AutochartistComponent
   ],
   imports: [
     BrowserModule,
