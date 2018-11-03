@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {OrderBookChart} from "./order-book-chart";
 import {Observable, of} from "rxjs";
-import {MessageService} from "./message.service";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { catchError, map, tap } from 'rxjs/operators';
 
@@ -12,14 +11,13 @@ export class OrderBookService {
 
   private restUrl = 'http://localhost:8080/rest/orderbook'
 
-  getOrderBook(): Observable<OrderBookChart[]>{
+  getOrderBooks(): Observable<OrderBookChart[]>{
     return this.http.get<OrderBookChart[]>(this.restUrl)
       .pipe(
         catchError(this.handleError('getOrderBook', []))
       );
   }
 
-  /** GET hero by id. Will 404 if id not found */
   getOrderBook(id: number): Observable<OrderBookChart> {
     const url = `${this.restUrl}/${id}`;
     return this.http.get<OrderBookChart>(url)
@@ -29,8 +27,7 @@ export class OrderBookService {
   }
 
   constructor(
-    private http: HttpClient,
-    private messageService: MessageService) { }
+    private http: HttpClient) { }
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
