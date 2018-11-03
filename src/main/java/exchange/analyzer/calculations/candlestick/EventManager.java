@@ -1,6 +1,6 @@
-package exchange.analyzer.innerLogics.calculations.candlestick;
+package exchange.analyzer.calculations.candlestick;
 
-import exchange.analyzer.innerLogics.calculations.candlestick.interfaces.EventListener;
+import exchange.analyzer.calculations.candlestick.interfaces.EventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;

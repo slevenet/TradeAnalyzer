@@ -1,4 +1,4 @@
-package exchange.analyzer.innerLogics.storages;
+package exchange.analyzer.storages;
 
 import com.oanda.v20.instrument.OrderBook;
 import com.oanda.v20.primitives.InstrumentName;

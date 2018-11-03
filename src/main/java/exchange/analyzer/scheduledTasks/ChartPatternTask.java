@@ -1,8 +1,8 @@
-package exchange.analyzer.innerLogics.scheduledTasks;
+package exchange.analyzer.scheduledTasks;
 
 import exchange.analyzer.configuration.common.constants.Constants;
 import exchange.analyzer.configuration.common.constants.ScheduleConstants;
-import exchange.analyzer.innerLogics.storages.ChartPatternStorage;
+import exchange.analyzer.storages.ChartPatternStorage;
 import exchange.analyzer.model.autochartist.chartpattern.ChartPattern;
 import exchange.analyzer.model.autochartist.chartpattern.ChartPatternRequest;
 import org.slf4j.Logger;

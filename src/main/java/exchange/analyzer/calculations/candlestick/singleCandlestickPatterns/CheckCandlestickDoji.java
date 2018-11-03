@@ -1,8 +1,8 @@
-package exchange.analyzer.innerLogics.calculations.candlestick.singleCandlestickPatterns;
+package exchange.analyzer.calculations.candlestick.singleCandlestickPatterns;
 
 import com.oanda.v20.instrument.Candlestick;
-import exchange.analyzer.innerLogics.calculations.candlestick.Classifications;
-import exchange.analyzer.innerLogics.calculations.candlestick.abstracts.CandlestickClassifier;
+import exchange.analyzer.calculations.candlestick.Classifications;
+import exchange.analyzer.calculations.candlestick.abstracts.CandlestickClassifier;
 import org.springframework.stereotype.Component;
 
 @Component

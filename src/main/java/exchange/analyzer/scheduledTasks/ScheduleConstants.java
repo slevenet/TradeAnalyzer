@@ -1,4 +1,4 @@
-package exchange.analyzer.innerLogics.scheduledTasks;
+package exchange.analyzer.scheduledTasks;
 
 import java.util.ArrayList;
 import java.util.Arrays;

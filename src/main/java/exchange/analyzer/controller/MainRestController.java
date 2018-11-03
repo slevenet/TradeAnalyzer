@@ -1,7 +1,7 @@
 package exchange.analyzer.controller;
 
 import com.oanda.v20.primitives.InstrumentName;
-import exchange.analyzer.innerLogics.storages.OrderBookChartStorage;
+import exchange.analyzer.storages.OrderBookChartStorage;
 import exchange.analyzer.model.charts.OrderBookChart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

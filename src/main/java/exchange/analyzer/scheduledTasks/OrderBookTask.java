@@ -1,4 +1,4 @@
-package exchange.analyzer.innerLogics.scheduledTasks;
+package exchange.analyzer.scheduledTasks;
 
 import com.oanda.v20.ExecuteException;
 import com.oanda.v20.RequestException;
@@ -7,8 +7,8 @@ import com.oanda.v20.instrument.OrderBook;
 import com.oanda.v20.primitives.InstrumentName;
 import exchange.analyzer.configuration.common.constants.BasicConstant;
 import exchange.analyzer.configuration.common.constants.ScheduleConstants;
-import exchange.analyzer.innerLogics.scheduledTasks.abstracts.OandaTask;
-import exchange.analyzer.innerLogics.storages.OrderBookChartStorage;
+import exchange.analyzer.scheduledTasks.abstracts.OandaTask;
+import exchange.analyzer.storages.OrderBookChartStorage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

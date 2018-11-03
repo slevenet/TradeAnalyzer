@@ -1,8 +1,8 @@
-package exchange.analyzer.innerLogics.calculations.candlestick.abstracts;
+package exchange.analyzer.calculations.candlestick.abstracts;
 
 
 import com.oanda.v20.instrument.Candlestick;
-import exchange.analyzer.innerLogics.calculations.candlestick.Classifications;
+import exchange.analyzer.calculations.candlestick.Classifications;
 
 public abstract class CandlestickClassifier {
 
