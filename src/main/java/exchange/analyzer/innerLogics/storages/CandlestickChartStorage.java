@@ -6,9 +6,9 @@ import com.oanda.v20.primitives.DateTime;
 import com.oanda.v20.primitives.InstrumentName;
 import exchange.analyzer.innerLogics.calculations.candlestick.Events;
 import exchange.analyzer.innerLogics.calculations.candlestick.NotificationListener;
-import exchange.analyzer.innerLogics.keyManager.KeyManager;
+import exchange.analyzer.configuration.common.keyManager.KeyManager;
 import exchange.analyzer.model.charts.CandlestickChart;
-import exchange.analyzer.innerLogics.keyManager.CurrencyKey;
+import exchange.analyzer.configuration.common.keyManager.CurrencyKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

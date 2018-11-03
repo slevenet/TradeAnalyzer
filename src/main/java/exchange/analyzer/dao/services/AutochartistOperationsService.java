@@ -14,7 +14,7 @@ public class AutochartistOperationsService {
     private Map<String, Map<Long,List<String>>> aggregatedData = new HashMap<>();
 
     @Autowired
-    AutochartistOperationsImpl autochartistOperations;
+    private AutochartistOperationsImpl autochartistOperations;
 
     public Map<String, Map<Long,List<String>>> getAggregatedData(String instrument){
         aggregatedData.put("meta",autochartistOperations.getMeta(instrument));

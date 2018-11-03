@@ -5,7 +5,8 @@ import com.oanda.v20.instrument.InstrumentCandlesRequest;
 import com.oanda.v20.instrument.InstrumentCandlesResponse;
 import com.oanda.v20.primitives.DateTime;
 import com.oanda.v20.primitives.InstrumentName;
-import exchange.analyzer.constants.ScheduleConstants;
+import exchange.analyzer.configuration.common.constants.BasicConstant;
+import exchange.analyzer.configuration.common.constants.ScheduleConstants;
 import exchange.analyzer.innerLogics.scheduledTasks.abstracts.OandaTask;
 import exchange.analyzer.innerLogics.storages.CandlestickChartStorage;
 import org.slf4j.Logger;
@@ -22,7 +23,7 @@ public class CandlestickTask extends OandaTask {
 
     @Scheduled(fixedRate = 15 * ScheduleConstants.MINUTE_FACTOR)
     public void process(){
-        ScheduleConstants.CURRENCIES.forEach(currency ->
+        BasicConstant.SUPPORTED_INSTRUMENT.forEach(currency ->
         {
             InstrumentName instrumentName = new InstrumentName(currency);
 

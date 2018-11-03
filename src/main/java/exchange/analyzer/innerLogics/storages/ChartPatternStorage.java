@@ -35,9 +35,8 @@ public class ChartPatternStorage {
     }
 
     public List<Signal> getSignals(String instrument){
-        List<Signal> signals = new ArrayList<>(
-                getSignals().stream().filter(signal -> signal.getInstrument().equals(instrument)).collect(Collectors.toList())
-        );
+        List<Signal> signals = getSignals().stream().filter(signal ->
+                signal.getInstrument().equals(instrument)).collect(Collectors.toCollection(ArrayList::new));
         return signals;
     }
 }

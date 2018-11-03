@@ -1,6 +1,6 @@
 package exchange.analyzer.innerLogics;
 
-import static exchange.analyzer.constants.BasicConstant.SUPPORTED_INSTRUMENT;
+import static exchange.analyzer.configuration.common.constants.BasicConstant.SUPPORTED_INSTRUMENT;
 
 public class Util {
 
