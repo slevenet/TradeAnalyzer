@@ -15,7 +15,7 @@ import java.util.Map;
 public class AutochartistRestController {
 
     @Autowired
-    AutochartistOperationsService autochartistOperationsService;
+    private AutochartistOperationsService autochartistOperationsService;
 
     @GetMapping("{instrument}")
     public Map<String, Map<Long,List<String>>> getPatterns(@PathVariable String instrument){
