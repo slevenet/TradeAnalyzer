@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {OrderBookChart} from "../order-book-chart";
-import {OrderBookService} from "../order-book.service";
+import {OrderBookChart} from "../model/order-book-chart";
+import {OrderBookService} from "../services/order-book.service";
 
 @Component({
   selector: 'app-order-book-chart',

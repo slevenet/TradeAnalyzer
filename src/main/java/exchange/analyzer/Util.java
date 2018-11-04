@@ -1,4 +1,4 @@
-package exchange.analyzer.innerLogics;
+package exchange.analyzer;
 
 import static exchange.analyzer.configuration.common.constants.BasicConstant.SUPPORTED_INSTRUMENT;
 

@@ -1,11 +1,11 @@
-package exchange.analyzer.innerLogics.storages;
+package exchange.analyzer.storages;
 
 import com.oanda.v20.instrument.Candlestick;
 import com.oanda.v20.instrument.CandlestickGranularity;
 import com.oanda.v20.primitives.DateTime;
 import com.oanda.v20.primitives.InstrumentName;
-import exchange.analyzer.innerLogics.calculations.candlestick.Events;
-import exchange.analyzer.innerLogics.calculations.candlestick.NotificationListener;
+import exchange.analyzer.calculations.candlestick.Events;
+import exchange.analyzer.calculations.candlestick.NotificationListener;
 import exchange.analyzer.configuration.common.keyManager.KeyManager;
 import exchange.analyzer.model.charts.CandlestickChart;
 import exchange.analyzer.configuration.common.keyManager.CurrencyKey;

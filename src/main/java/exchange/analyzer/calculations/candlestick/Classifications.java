@@ -1,4 +1,4 @@
-package exchange.analyzer.innerLogics.calculations.candlestick;
+package exchange.analyzer.calculations.candlestick;
 
 public final class Classifications {
 

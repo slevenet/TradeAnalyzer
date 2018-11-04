@@ -1,7 +1,7 @@
 package exchange.analyzer.dao.implementation;
 
 import exchange.analyzer.dao.interfaces.AutochartistOperations;
-import exchange.analyzer.innerLogics.storages.ChartPatternStorage;
+import exchange.analyzer.storages.ChartPatternStorage;
 import exchange.analyzer.model.autochartist.chartpattern.Signal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

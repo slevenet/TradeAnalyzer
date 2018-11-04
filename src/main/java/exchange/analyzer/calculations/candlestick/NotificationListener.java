@@ -1,7 +1,7 @@
-package exchange.analyzer.innerLogics.calculations.candlestick;
+package exchange.analyzer.calculations.candlestick;
 
-import exchange.analyzer.innerLogics.calculations.candlestick.abstracts.CandlestickClassifier;
-import exchange.analyzer.innerLogics.calculations.candlestick.interfaces.EventListener;
+import exchange.analyzer.calculations.candlestick.abstracts.CandlestickClassifier;
+import exchange.analyzer.calculations.candlestick.interfaces.EventListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

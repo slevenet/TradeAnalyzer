@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {OrderBookChart} from "./order-book-chart";
+import {OrderBookChart} from "../model/order-book-chart";
 import {Observable, of} from "rxjs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { catchError, map, tap } from 'rxjs/operators';

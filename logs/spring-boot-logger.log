@@ -1,105 +1,313 @@
-2018-10-31 00:13:09,550 INFO  [main] org.springframework.boot.StartupInfoLogger: Starting Application on    with PID 7480 (E:\project\TradeAnalyzer\target\classes started by   in E:\project\TradeAnalyzer)
-2018-10-31 00:13:09,555 INFO  [main] org.springframework.boot.SpringApplication: No active profile set, falling back to default profiles: default
-2018-10-31 00:13:09,962 INFO  [main] org.springframework.context.support.AbstractApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@70ab2d48: startup date [Wed Oct 31 00:13:09 MSK 2018]; root of context hierarchy
-2018-10-31 00:13:12,849 INFO  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$8227cde6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2018-10-31 00:13:12,948 INFO  [main] org.springframework.ws.soap.addressing.server.AbstractAddressingEndpointMapping: Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2018-10-31 00:13:14,396 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
-2018-10-31 00:13:14,421 INFO  [main] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
-2018-10-31 00:13:14,462 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
-2018-10-31 00:13:14,463 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting Servlet Engine: Apache Tomcat/8.5.34
-2018-10-31 00:13:14,476 INFO  [localhost-startStop-1] org.apache.juli.logging.DirectJDKLog: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;E:\weather\gradle\bin;D:\maven\bin;C:\Program Files\Java\jdk1.8.0_161\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;E:\texstudio\MiKTeX\miktex\bin\x64\;C:\Users\ \AppData\Roaming\npm;.]
-2018-10-31 00:13:14,634 INFO  [localhost-startStop-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
-2018-10-31 00:13:14,634 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 4672 ms
-2018-10-31 00:13:14,742 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet dispatcherServlet mapped to [/]
-2018-10-31 00:13:14,743 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet messageDispatcherServlet mapped to [/services/*]
-2018-10-31 00:13:14,747 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-2018-10-31 00:13:14,747 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-2018-10-31 00:13:14,747 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'httpPutFormContentFilter' to: [/*]
-2018-10-31 00:13:14,747 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-2018-10-31 00:13:16,011 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-10-31 00:13:16,292 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter: Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@70ab2d48: startup date [Wed Oct 31 00:13:09 MSK 2018]; root of context hierarchy
-2018-10-31 00:13:16,345 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/autochartist],methods=[GET]}" onto public java.util.List<java.lang.String> exchange.analyzer.controller.AutochartistRestController.getPatterns()
-2018-10-31 00:13:16,346 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/rest],methods=[GET]}" onto public java.util.Map<com.oanda.v20.primitives.InstrumentName, exchange.analyzer.model.charts.OrderBookChart> exchange.analyzer.controller.MainRestController.home()
-2018-10-31 00:13:16,350 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2018-10-31 00:13:16,350 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2018-10-31 00:13:16,371 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-10-31 00:13:16,371 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-10-31 00:13:16,656 INFO  [main] org.springframework.jmx.export.MBeanExporter: Registering beans for JMX exposure on startup
-2018-10-31 00:13:16,681 INFO  [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2018-10-31 00:13:16,733 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
-2018-10-31 00:13:16,756 INFO  [main] org.apache.juli.logging.DirectJDKLog: Using a shared selector for servlet write/read
-2018-10-31 00:13:16,789 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
-2018-10-31 00:13:16,806 INFO  [main] org.springframework.boot.StartupInfoLogger: Started Application in 10.671 seconds (JVM running for 18.341)
-2018-10-31 00:13:56,666 INFO  [http-nio-8080-exec-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring FrameworkServlet 'dispatcherServlet'
-2018-10-31 00:13:56,667 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.FrameworkServlet: FrameworkServlet 'dispatcherServlet': initialization started
-2018-10-31 00:13:56,711 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.FrameworkServlet: FrameworkServlet 'dispatcherServlet': initialization completed in 44 ms
-2018-10-31 00:19:57,504 INFO  [main] org.springframework.boot.StartupInfoLogger: Starting Application on    with PID 2372 (E:\project\TradeAnalyzer\target\classes started by   in E:\project\TradeAnalyzer)
-2018-10-31 00:19:57,508 INFO  [main] org.springframework.boot.SpringApplication: No active profile set, falling back to default profiles: default
-2018-10-31 00:19:57,557 INFO  [main] org.springframework.context.support.AbstractApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@19648c40: startup date [Wed Oct 31 00:19:57 MSK 2018]; root of context hierarchy
-2018-10-31 00:19:58,549 INFO  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$efade434] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2018-10-31 00:19:58,577 INFO  [main] org.springframework.ws.soap.addressing.server.AbstractAddressingEndpointMapping: Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2018-10-31 00:19:58,885 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
-2018-10-31 00:19:58,896 INFO  [main] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
-2018-10-31 00:19:58,905 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
-2018-10-31 00:19:58,906 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting Servlet Engine: Apache Tomcat/8.5.34
-2018-10-31 00:19:58,910 INFO  [localhost-startStop-1] org.apache.juli.logging.DirectJDKLog: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;E:\weather\gradle\bin;D:\maven\bin;C:\Program Files\Java\jdk1.8.0_161\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;E:\texstudio\MiKTeX\miktex\bin\x64\;C:\Users\ \AppData\Roaming\npm;.]
-2018-10-31 00:19:59,003 INFO  [localhost-startStop-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
-2018-10-31 00:19:59,003 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1446 ms
-2018-10-31 00:19:59,065 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet dispatcherServlet mapped to [/]
-2018-10-31 00:19:59,066 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet messageDispatcherServlet mapped to [/services/*]
-2018-10-31 00:19:59,070 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-2018-10-31 00:19:59,071 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-2018-10-31 00:19:59,071 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'httpPutFormContentFilter' to: [/*]
-2018-10-31 00:19:59,071 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-2018-10-31 00:19:59,347 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-10-31 00:19:59,477 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter: Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@19648c40: startup date [Wed Oct 31 00:19:57 MSK 2018]; root of context hierarchy
-2018-10-31 00:19:59,516 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/autochartist],methods=[GET]}" onto public java.util.Map<java.lang.Long, exchange.analyzer.model.autochartist.Signal> exchange.analyzer.controller.AutochartistRestController.getPatterns()
-2018-10-31 00:19:59,517 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/rest],methods=[GET]}" onto public java.util.Map<com.oanda.v20.primitives.InstrumentName, exchange.analyzer.model.charts.OrderBookChart> exchange.analyzer.controller.MainRestController.home()
-2018-10-31 00:19:59,521 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2018-10-31 00:19:59,522 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2018-10-31 00:19:59,551 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-10-31 00:19:59,551 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-10-31 00:19:59,713 INFO  [main] org.springframework.jmx.export.MBeanExporter: Registering beans for JMX exposure on startup
-2018-10-31 00:19:59,724 INFO  [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2018-10-31 00:19:59,730 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
-2018-10-31 00:19:59,740 INFO  [main] org.apache.juli.logging.DirectJDKLog: Using a shared selector for servlet write/read
-2018-10-31 00:19:59,752 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
-2018-10-31 00:19:59,756 INFO  [main] org.springframework.boot.StartupInfoLogger: Started Application in 2.651 seconds (JVM running for 3.468)
-2018-10-31 00:20:45,854 INFO  [http-nio-8080-exec-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring FrameworkServlet 'dispatcherServlet'
-2018-10-31 00:20:45,854 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.FrameworkServlet: FrameworkServlet 'dispatcherServlet': initialization started
-2018-10-31 00:20:45,869 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.FrameworkServlet: FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
-2018-10-31 00:24:31,304 INFO  [main] org.springframework.boot.StartupInfoLogger: Starting Application on    with PID 3968 (E:\project\TradeAnalyzer\target\classes started by   in E:\project\TradeAnalyzer)
-2018-10-31 00:24:31,308 INFO  [main] org.springframework.boot.SpringApplication: No active profile set, falling back to default profiles: default
-2018-10-31 00:24:31,352 INFO  [main] org.springframework.context.support.AbstractApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3300f4fd: startup date [Wed Oct 31 00:24:31 MSK 2018]; root of context hierarchy
-2018-10-31 00:24:32,309 INFO  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$8ec2925e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2018-10-31 00:24:32,336 INFO  [main] org.springframework.ws.soap.addressing.server.AbstractAddressingEndpointMapping: Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2018-10-31 00:24:32,623 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
-2018-10-31 00:24:32,634 INFO  [main] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
-2018-10-31 00:24:32,642 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
-2018-10-31 00:24:32,642 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting Servlet Engine: Apache Tomcat/8.5.34
-2018-10-31 00:24:32,646 INFO  [localhost-startStop-1] org.apache.juli.logging.DirectJDKLog: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;E:\weather\gradle\bin;D:\maven\bin;C:\Program Files\Java\jdk1.8.0_161\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;E:\texstudio\MiKTeX\miktex\bin\x64\;C:\Users\ \AppData\Roaming\npm;.]
-2018-10-31 00:24:32,724 INFO  [localhost-startStop-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
-2018-10-31 00:24:32,725 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1373 ms
-2018-10-31 00:24:32,785 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet dispatcherServlet mapped to [/]
-2018-10-31 00:24:32,787 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet messageDispatcherServlet mapped to [/services/*]
-2018-10-31 00:24:32,789 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
-2018-10-31 00:24:32,790 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-2018-10-31 00:24:32,791 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'httpPutFormContentFilter' to: [/*]
-2018-10-31 00:24:32,791 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
-2018-10-31 00:24:33,046 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-10-31 00:24:33,173 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter: Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3300f4fd: startup date [Wed Oct 31 00:24:31 MSK 2018]; root of context hierarchy
-2018-10-31 00:24:33,210 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/autochartist],methods=[GET]}" onto public java.util.Map<java.lang.Long, exchange.analyzer.model.autochartist.Signal> exchange.analyzer.controller.AutochartistRestController.getPatterns()
-2018-10-31 00:24:33,211 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/rest],methods=[GET]}" onto public java.util.Map<com.oanda.v20.primitives.InstrumentName, exchange.analyzer.model.charts.OrderBookChart> exchange.analyzer.controller.MainRestController.home()
-2018-10-31 00:24:33,215 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2018-10-31 00:24:33,216 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2018-10-31 00:24:33,233 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-10-31 00:24:33,234 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-10-31 00:24:33,410 INFO  [main] org.springframework.jmx.export.MBeanExporter: Registering beans for JMX exposure on startup
-2018-10-31 00:24:33,422 INFO  [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2018-10-31 00:24:33,427 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
-2018-10-31 00:24:33,435 INFO  [main] org.apache.juli.logging.DirectJDKLog: Using a shared selector for servlet write/read
-2018-10-31 00:24:33,445 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
-2018-10-31 00:24:33,449 INFO  [main] org.springframework.boot.StartupInfoLogger: Started Application in 2.514 seconds (JVM running for 3.214)
-2018-10-31 00:24:39,879 INFO  [http-nio-8080-exec-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring FrameworkServlet 'dispatcherServlet'
-2018-10-31 00:24:39,880 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.FrameworkServlet: FrameworkServlet 'dispatcherServlet': initialization started
-2018-10-31 00:24:39,891 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.FrameworkServlet: FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+2018-11-04 01:22:19,404 INFO  [main] org.springframework.boot.StartupInfoLogger: Starting Application on    with PID 6512 (E:\project\TradeAnalyzer\target\classes started by   in E:\project\TradeAnalyzer)
+2018-11-04 01:22:19,410 INFO  [main] org.springframework.boot.SpringApplication: No active profile set, falling back to default profiles: default
+2018-11-04 01:22:19,464 INFO  [main] org.springframework.context.support.AbstractApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2e61d218: startup date [Sun Nov 04 01:22:19 MSK 2018]; root of context hierarchy
+2018-11-04 01:22:20,431 INFO  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$bd4f1ed7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-04 01:22:20,456 INFO  [main] org.springframework.ws.soap.addressing.server.AbstractAddressingEndpointMapping: Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2018-11-04 01:22:20,482 INFO  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$18b759d8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-04 01:22:20,815 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2018-11-04 01:22:20,826 INFO  [main] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2018-11-04 01:22:20,834 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2018-11-04 01:22:20,835 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting Servlet Engine: Apache Tomcat/8.5.34
+2018-11-04 01:22:20,839 INFO  [localhost-startStop-1] org.apache.juli.logging.DirectJDKLog: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;E:\weather\gradle\bin;D:\maven\bin;C:\Program Files\Java\jdk1.8.0_161\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;E:\texstudio\MiKTeX\miktex\bin\x64\;C:\Users\ \AppData\Roaming\npm;.]
+2018-11-04 01:22:20,921 INFO  [localhost-startStop-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2018-11-04 01:22:20,921 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1457 ms
+2018-11-04 01:22:20,981 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet dispatcherServlet mapped to [/]
+2018-11-04 01:22:20,982 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet messageDispatcherServlet mapped to [/services/*]
+2018-11-04 01:22:20,985 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-11-04 01:22:20,986 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-11-04 01:22:20,986 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-11-04 01:22:20,986 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
+2018-11-04 01:22:21,209 WARN  [main] org.springframework.context.support.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in exchange.analyzer.Application: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'getDataSource' threw exception; nested exception is java.lang.IllegalArgumentException: Property 'driverClassName' must not be empty
+2018-11-04 01:22:21,211 INFO  [main] org.apache.juli.logging.DirectJDKLog: Stopping service [Tomcat]
+2018-11-04 01:22:21,243 INFO  [main] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener: 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-11-04 01:22:21,257 ERROR [main] org.springframework.boot.SpringApplication: Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in exchange.analyzer.Application: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'getDataSource' threw exception; nested exception is java.lang.IllegalArgumentException: Property 'driverClassName' must not be empty
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:590)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1247)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1096)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:535)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:780)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:412)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:333)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1277)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1265)
+	at exchange.analyzer.Application.main(Application.java:33)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'getDataSource' threw exception; nested exception is java.lang.IllegalArgumentException: Property 'driverClassName' must not be empty
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:582)
+	... 18 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Property 'driverClassName' must not be empty
+	at org.springframework.util.Assert.hasText(Assert.java:276)
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName(DriverManagerDataSource.java:124)
+	at exchange.analyzer.Application.getDataSource(Application.java:39)
+	at exchange.analyzer.Application$$EnhancerBySpringCGLIB$$dbccd770.CGLIB$getDataSource$0(<generated>)
+	at exchange.analyzer.Application$$EnhancerBySpringCGLIB$$dbccd770$$FastClassBySpringCGLIB$$84601890.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:365)
+	at exchange.analyzer.Application$$EnhancerBySpringCGLIB$$dbccd770.getDataSource(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 19 common frames omitted
+2018-11-04 01:24:09,494 INFO  [main] org.springframework.boot.StartupInfoLogger: Starting Application on    with PID 7996 (E:\project\TradeAnalyzer\target\classes started by   in E:\project\TradeAnalyzer)
+2018-11-04 01:24:09,498 INFO  [main] org.springframework.boot.SpringApplication: No active profile set, falling back to default profiles: default
+2018-11-04 01:24:09,553 INFO  [main] org.springframework.context.support.AbstractApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6bb2d00b: startup date [Sun Nov 04 01:24:09 MSK 2018]; root of context hierarchy
+2018-11-04 01:24:10,447 INFO  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$416f66c5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-04 01:24:10,474 INFO  [main] org.springframework.ws.soap.addressing.server.AbstractAddressingEndpointMapping: Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2018-11-04 01:24:10,513 INFO  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9cd7a1c6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-04 01:24:10,827 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2018-11-04 01:24:10,838 INFO  [main] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2018-11-04 01:24:10,847 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2018-11-04 01:24:10,847 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting Servlet Engine: Apache Tomcat/8.5.34
+2018-11-04 01:24:10,851 INFO  [localhost-startStop-1] org.apache.juli.logging.DirectJDKLog: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;E:\weather\gradle\bin;D:\maven\bin;C:\Program Files\Java\jdk1.8.0_161\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;E:\texstudio\MiKTeX\miktex\bin\x64\;C:\Users\ \AppData\Roaming\npm;.]
+2018-11-04 01:24:10,933 INFO  [localhost-startStop-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2018-11-04 01:24:10,934 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1381 ms
+2018-11-04 01:24:10,996 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet dispatcherServlet mapped to [/]
+2018-11-04 01:24:10,997 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet messageDispatcherServlet mapped to [/services/*]
+2018-11-04 01:24:11,000 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-11-04 01:24:11,000 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-11-04 01:24:11,001 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-11-04 01:24:11,001 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
+2018-11-04 01:24:11,248 INFO  [main] org.springframework.jdbc.datasource.DriverManagerDataSource: Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-11-04 01:24:11,407 INFO  [main] org.hibernate.Version: HHH000412: Hibernate Core {5.2.17.Final}
+2018-11-04 01:24:11,409 INFO  [main] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+2018-11-04 01:24:17,697 WARN  [main] org.springframework.context.support.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in exchange.analyzer.Application: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.hibernate.SessionFactory]: Factory method 'getSessionFactory' threw exception; nested exception is java.lang.TypeNotPresentException: Type org.threeten.bp.Instant not present
+2018-11-04 01:24:17,699 INFO  [main] org.apache.juli.logging.DirectJDKLog: Stopping service [Tomcat]
+2018-11-04 01:24:17,713 INFO  [main] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener: 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-11-04 01:24:17,719 ERROR [main] org.springframework.boot.SpringApplication: Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in exchange.analyzer.Application: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.hibernate.SessionFactory]: Factory method 'getSessionFactory' threw exception; nested exception is java.lang.TypeNotPresentException: Type org.threeten.bp.Instant not present
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:590)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1247)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1096)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:535)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:780)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:412)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:333)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1277)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1265)
+	at exchange.analyzer.Application.main(Application.java:33)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.hibernate.SessionFactory]: Factory method 'getSessionFactory' threw exception; nested exception is java.lang.TypeNotPresentException: Type org.threeten.bp.Instant not present
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:582)
+	... 18 common frames omitted
+Caused by: java.lang.TypeNotPresentException: Type org.threeten.bp.Instant not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117)
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125)
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68)
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138)
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117)
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95)
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1114)
+	at org.hibernate.cfg.AttributeConverterDefinition.extractAttributeConverterParameterizedType(AttributeConverterDefinition.java:157)
+	at org.hibernate.cfg.AttributeConverterDefinition.<init>(AttributeConverterDefinition.java:114)
+	at org.hibernate.cfg.AttributeConverterDefinition.from(AttributeConverterDefinition.java:93)
+	at org.hibernate.cfg.AttributeConverterDefinition.from(AttributeConverterDefinition.java:73)
+	at org.hibernate.cfg.Configuration.addAttributeConverter(Configuration.java:766)
+	at org.springframework.orm.hibernate5.LocalSessionFactoryBuilder.scanPackages(LocalSessionFactoryBuilder.java:331)
+	at org.springframework.orm.hibernate5.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:512)
+	at exchange.analyzer.Application.getSessionFactory(Application.java:66)
+	at exchange.analyzer.Application$$EnhancerBySpringCGLIB$$5fed1f5e.CGLIB$getSessionFactory$2(<generated>)
+	at exchange.analyzer.Application$$EnhancerBySpringCGLIB$$5fed1f5e$$FastClassBySpringCGLIB$$490312db.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:365)
+	at exchange.analyzer.Application$$EnhancerBySpringCGLIB$$5fed1f5e.getSessionFactory(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 19 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.threeten.bp.Instant
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:582)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:190)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:499)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:374)
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:114)
+	... 45 common frames omitted
+2018-11-04 01:27:27,730 INFO  [main] org.springframework.boot.StartupInfoLogger: Starting Application on    with PID 5872 (E:\project\TradeAnalyzer\target\classes started by   in E:\project\TradeAnalyzer)
+2018-11-04 01:27:27,734 INFO  [main] org.springframework.boot.SpringApplication: No active profile set, falling back to default profiles: default
+2018-11-04 01:27:27,804 INFO  [main] org.springframework.context.support.AbstractApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@77d2e85: startup date [Sun Nov 04 01:27:27 MSK 2018]; root of context hierarchy
+2018-11-04 01:27:28,722 INFO  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$242af72f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-04 01:27:28,746 INFO  [main] org.springframework.ws.soap.addressing.server.AbstractAddressingEndpointMapping: Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2018-11-04 01:27:28,771 INFO  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7f933230] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-04 01:27:29,083 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2018-11-04 01:27:29,094 INFO  [main] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2018-11-04 01:27:29,103 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2018-11-04 01:27:29,103 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting Servlet Engine: Apache Tomcat/8.5.34
+2018-11-04 01:27:29,107 INFO  [localhost-startStop-1] org.apache.juli.logging.DirectJDKLog: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;E:\weather\gradle\bin;D:\maven\bin;C:\Program Files\Java\jdk1.8.0_161\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;E:\texstudio\MiKTeX\miktex\bin\x64\;C:\Users\ \AppData\Roaming\npm;.]
+2018-11-04 01:27:29,185 INFO  [localhost-startStop-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2018-11-04 01:27:29,185 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1381 ms
+2018-11-04 01:27:29,245 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet dispatcherServlet mapped to [/]
+2018-11-04 01:27:29,246 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet messageDispatcherServlet mapped to [/services/*]
+2018-11-04 01:27:29,249 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-11-04 01:27:29,249 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-11-04 01:27:29,249 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-11-04 01:27:29,250 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
+2018-11-04 01:27:29,479 INFO  [main] org.springframework.jdbc.datasource.DriverManagerDataSource: Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-11-04 01:27:29,563 INFO  [main] org.hibernate.Version: HHH000412: Hibernate Core {5.2.17.Final}
+2018-11-04 01:27:29,565 INFO  [main] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+2018-11-04 01:27:29,589 INFO  [main] org.hibernate.annotations.common.reflection.java.JavaReflectionManager: HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-04 01:27:30,103 INFO  [main] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-11-04 01:27:30,274 INFO  [main] org.springframework.orm.hibernate5.HibernateTransactionManager: Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@34be065a] of Hibernate SessionFactory for HibernateTransactionManager
+2018-11-04 01:27:30,332 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-04 01:27:30,523 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter: Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@77d2e85: startup date [Sun Nov 04 01:27:27 MSK 2018]; root of context hierarchy
+2018-11-04 01:27:30,547 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-11-04 01:27:30,572 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/autochartist/{instrument}],methods=[GET]}" onto public java.util.Map<java.lang.String, java.util.Map<java.lang.Long, java.util.List<java.lang.String>>> exchange.analyzer.controller.AutochartistRestController.getPatterns(java.lang.String)
+2018-11-04 01:27:30,573 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/rest],methods=[GET]}" onto public java.util.Map<com.oanda.v20.primitives.InstrumentName, exchange.analyzer.model.charts.OrderBookChart> exchange.analyzer.controller.MainRestController.home()
+2018-11-04 01:27:30,575 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-04 01:27:30,575 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-04 01:27:30,597 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-04 01:27:30,598 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-04 01:27:31,074 INFO  [main] org.springframework.jmx.export.MBeanExporter: Registering beans for JMX exposure on startup
+2018-11-04 01:27:31,088 INFO  [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-11-04 01:27:31,093 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
+2018-11-04 01:27:31,102 INFO  [main] org.apache.juli.logging.DirectJDKLog: Using a shared selector for servlet write/read
+2018-11-04 01:27:31,113 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2018-11-04 01:27:31,116 INFO  [main] org.springframework.boot.StartupInfoLogger: Started Application in 3.812 seconds (JVM running for 4.549)
+2018-11-04 01:33:03,251 INFO  [main] org.springframework.boot.StartupInfoLogger: Starting Application on    with PID 6440 (E:\project\TradeAnalyzer\target\classes started by   in E:\project\TradeAnalyzer)
+2018-11-04 01:33:03,256 INFO  [main] org.springframework.boot.SpringApplication: No active profile set, falling back to default profiles: default
+2018-11-04 01:33:03,308 INFO  [main] org.springframework.context.support.AbstractApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@58ffcbd7: startup date [Sun Nov 04 01:33:03 MSK 2018]; root of context hierarchy
+2018-11-04 01:33:04,358 INFO  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$e5868a74] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-04 01:33:04,385 INFO  [main] org.springframework.ws.soap.addressing.server.AbstractAddressingEndpointMapping: Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2018-11-04 01:33:04,410 INFO  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$40eec575] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-04 01:33:04,732 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2018-11-04 01:33:04,743 INFO  [main] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2018-11-04 01:33:04,751 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2018-11-04 01:33:04,752 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting Servlet Engine: Apache Tomcat/8.5.34
+2018-11-04 01:33:04,756 INFO  [localhost-startStop-1] org.apache.juli.logging.DirectJDKLog: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;E:\weather\gradle\bin;D:\maven\bin;C:\Program Files\Java\jdk1.8.0_161\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;E:\texstudio\MiKTeX\miktex\bin\x64\;C:\Users\ \AppData\Roaming\npm;.]
+2018-11-04 01:33:04,833 INFO  [localhost-startStop-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2018-11-04 01:33:04,833 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1526 ms
+2018-11-04 01:33:04,892 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet dispatcherServlet mapped to [/]
+2018-11-04 01:33:04,893 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet messageDispatcherServlet mapped to [/services/*]
+2018-11-04 01:33:04,896 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-11-04 01:33:04,896 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-11-04 01:33:04,896 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-11-04 01:33:04,896 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
+2018-11-04 01:33:05,123 INFO  [main] org.springframework.jdbc.datasource.DriverManagerDataSource: Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-11-04 01:33:05,188 INFO  [main] org.hibernate.Version: HHH000412: Hibernate Core {5.2.17.Final}
+2018-11-04 01:33:05,190 INFO  [main] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+2018-11-04 01:33:05,214 INFO  [main] org.hibernate.annotations.common.reflection.java.JavaReflectionManager: HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-04 01:33:05,610 INFO  [main] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-11-04 01:33:05,785 INFO  [main] org.springframework.orm.hibernate5.HibernateTransactionManager: Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@de81be1] of Hibernate SessionFactory for HibernateTransactionManager
+2018-11-04 01:33:05,844 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-04 01:33:06,023 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter: Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@58ffcbd7: startup date [Sun Nov 04 01:33:03 MSK 2018]; root of context hierarchy
+2018-11-04 01:33:06,063 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/autochartist/{instrument}],methods=[GET]}" onto public java.util.Map<java.lang.String, java.util.Map<java.lang.Long, java.util.List<java.lang.String>>> exchange.analyzer.controller.AutochartistRestController.getPatterns(java.lang.String)
+2018-11-04 01:33:06,064 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/rest],methods=[GET]}" onto public java.util.Map<com.oanda.v20.primitives.InstrumentName, exchange.analyzer.model.charts.OrderBookChart> exchange.analyzer.controller.MainRestController.home()
+2018-11-04 01:33:06,066 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-04 01:33:06,067 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-04 01:33:06,088 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-04 01:33:06,088 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-04 01:33:06,325 INFO  [main] org.springframework.jmx.export.MBeanExporter: Registering beans for JMX exposure on startup
+2018-11-04 01:33:06,338 INFO  [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-11-04 01:33:06,344 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
+2018-11-04 01:33:06,352 INFO  [main] org.apache.juli.logging.DirectJDKLog: Using a shared selector for servlet write/read
+2018-11-04 01:33:06,366 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2018-11-04 01:33:06,369 INFO  [main] org.springframework.boot.StartupInfoLogger: Started Application in 3.47 seconds (JVM running for 4.23)
+2018-11-04 01:49:55,797 INFO  [main] org.springframework.boot.StartupInfoLogger: Starting Application on    with PID 6340 (E:\project\TradeAnalyzer\target\classes started by   in E:\project\TradeAnalyzer)
+2018-11-04 01:49:55,802 INFO  [main] org.springframework.boot.SpringApplication: No active profile set, falling back to default profiles: default
+2018-11-04 01:49:55,856 INFO  [main] org.springframework.context.support.AbstractApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6f2cfcc2: startup date [Sun Nov 04 01:49:55 MSK 2018]; root of context hierarchy
+2018-11-04 01:49:56,763 INFO  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$204fcbc6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-04 01:49:56,790 INFO  [main] org.springframework.ws.soap.addressing.server.AbstractAddressingEndpointMapping: Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2018-11-04 01:49:56,816 INFO  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7bb806c7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-04 01:49:57,150 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2018-11-04 01:49:57,161 INFO  [main] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2018-11-04 01:49:57,169 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2018-11-04 01:49:57,169 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting Servlet Engine: Apache Tomcat/8.5.34
+2018-11-04 01:49:57,173 INFO  [localhost-startStop-1] org.apache.juli.logging.DirectJDKLog: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;E:\weather\gradle\bin;D:\maven\bin;C:\Program Files\Java\jdk1.8.0_161\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;E:\texstudio\MiKTeX\miktex\bin\x64\;C:\Users\ \AppData\Roaming\npm;.]
+2018-11-04 01:49:57,250 INFO  [localhost-startStop-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2018-11-04 01:49:57,250 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1394 ms
+2018-11-04 01:49:57,309 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet dispatcherServlet mapped to [/]
+2018-11-04 01:49:57,310 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet messageDispatcherServlet mapped to [/services/*]
+2018-11-04 01:49:57,313 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-11-04 01:49:57,313 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-11-04 01:49:57,313 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-11-04 01:49:57,314 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
+2018-11-04 01:49:57,539 INFO  [main] org.springframework.jdbc.datasource.DriverManagerDataSource: Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-11-04 01:49:57,604 INFO  [main] org.hibernate.Version: HHH000412: Hibernate Core {5.2.17.Final}
+2018-11-04 01:49:57,606 INFO  [main] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+2018-11-04 01:49:57,630 INFO  [main] org.hibernate.annotations.common.reflection.java.JavaReflectionManager: HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-04 01:49:58,009 INFO  [main] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-11-04 01:49:58,180 INFO  [main] org.springframework.orm.hibernate5.HibernateTransactionManager: Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@65afeb6d] of Hibernate SessionFactory for HibernateTransactionManager
+2018-11-04 01:49:58,239 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-04 01:49:58,423 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter: Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6f2cfcc2: startup date [Sun Nov 04 01:49:55 MSK 2018]; root of context hierarchy
+2018-11-04 01:49:58,470 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/autochartist/{instrument}],methods=[GET]}" onto public java.util.Map<java.lang.String, java.util.Map<java.lang.Long, java.util.List<java.lang.String>>> exchange.analyzer.controller.AutochartistRestController.getPatterns(java.lang.String)
+2018-11-04 01:49:58,472 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/rest],methods=[GET]}" onto public java.util.Map<com.oanda.v20.primitives.InstrumentName, exchange.analyzer.model.charts.OrderBookChart> exchange.analyzer.controller.MainRestController.home()
+2018-11-04 01:49:58,474 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-04 01:49:58,475 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-04 01:49:58,504 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-04 01:49:58,505 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-04 01:49:58,752 INFO  [main] org.springframework.jmx.export.MBeanExporter: Registering beans for JMX exposure on startup
+2018-11-04 01:49:58,766 INFO  [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-11-04 01:49:58,771 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
+2018-11-04 01:49:58,779 INFO  [main] org.apache.juli.logging.DirectJDKLog: Using a shared selector for servlet write/read
+2018-11-04 01:49:58,792 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2018-11-04 01:49:58,794 INFO  [main] org.springframework.boot.StartupInfoLogger: Started Application in 3.322 seconds (JVM running for 4.035)
+2018-11-04 02:45:06,779 INFO  [main] org.springframework.boot.StartupInfoLogger: Starting Application on    with PID 1176 (E:\project\TradeAnalyzer\target\classes started by   in E:\project\TradeAnalyzer)
+2018-11-04 02:45:06,788 INFO  [main] org.springframework.boot.SpringApplication: No active profile set, falling back to default profiles: default
+2018-11-04 02:45:06,850 INFO  [main] org.springframework.context.support.AbstractApplicationContext: Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4c5474f5: startup date [Sun Nov 04 02:45:06 MSK 2018]; root of context hierarchy
+2018-11-04 02:45:07,933 INFO  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$f799152d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-04 02:45:07,959 INFO  [main] org.springframework.ws.soap.addressing.server.AbstractAddressingEndpointMapping: Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2018-11-04 02:45:07,988 INFO  [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5301502e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-04 02:45:08,321 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2018-11-04 02:45:08,333 INFO  [main] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2018-11-04 02:45:08,342 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2018-11-04 02:45:08,342 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting Servlet Engine: Apache Tomcat/8.5.34
+2018-11-04 02:45:08,346 INFO  [localhost-startStop-1] org.apache.juli.logging.DirectJDKLog: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;E:\weather\gradle\bin;D:\maven\bin;C:\Program Files\Java\jdk1.8.0_161\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;E:\texstudio\MiKTeX\miktex\bin\x64\;C:\Users\ \AppData\Roaming\npm;.]
+2018-11-04 02:45:08,425 INFO  [localhost-startStop-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2018-11-04 02:45:08,426 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1576 ms
+2018-11-04 02:45:08,487 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet dispatcherServlet mapped to [/]
+2018-11-04 02:45:08,488 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean: Servlet messageDispatcherServlet mapped to [/services/*]
+2018-11-04 02:45:08,491 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-11-04 02:45:08,492 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-11-04 02:45:08,492 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-11-04 02:45:08,493 INFO  [localhost-startStop-1] org.springframework.boot.web.servlet.AbstractFilterRegistrationBean: Mapping filter: 'requestContextFilter' to: [/*]
+2018-11-04 02:45:08,756 INFO  [main] org.springframework.jdbc.datasource.DriverManagerDataSource: Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-11-04 02:45:08,827 INFO  [main] org.hibernate.Version: HHH000412: Hibernate Core {5.2.17.Final}
+2018-11-04 02:45:08,829 INFO  [main] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+2018-11-04 02:45:08,856 INFO  [main] org.hibernate.annotations.common.reflection.java.JavaReflectionManager: HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-04 02:45:09,260 INFO  [main] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-11-04 02:45:09,428 INFO  [main] org.springframework.orm.hibernate5.HibernateTransactionManager: Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@414f87a9] of Hibernate SessionFactory for HibernateTransactionManager
+2018-11-04 02:45:09,490 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-04 02:45:09,687 INFO  [main] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter: Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4c5474f5: startup date [Sun Nov 04 02:45:06 MSK 2018]; root of context hierarchy
+2018-11-04 02:45:09,730 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/autochartist/{instrument}],methods=[GET]}" onto public java.util.Map<java.lang.String, java.util.Map<java.lang.Long, java.util.List<java.lang.String>>> exchange.analyzer.controller.AutochartistRestController.getPatterns(java.lang.String)
+2018-11-04 02:45:09,731 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/rest],methods=[GET]}" onto public java.util.Map<com.oanda.v20.primitives.InstrumentName, exchange.analyzer.model.charts.OrderBookChart> exchange.analyzer.controller.MainRestController.home()
+2018-11-04 02:45:09,734 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-04 02:45:09,734 INFO  [main] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry: Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-04 02:45:09,757 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-04 02:45:09,757 INFO  [main] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping: Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-04 02:45:10,009 INFO  [main] org.springframework.jmx.export.MBeanExporter: Registering beans for JMX exposure on startup
+2018-11-04 02:45:10,023 INFO  [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-11-04 02:45:10,028 INFO  [main] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
+2018-11-04 02:45:10,037 INFO  [main] org.apache.juli.logging.DirectJDKLog: Using a shared selector for servlet write/read
+2018-11-04 02:45:10,050 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2018-11-04 02:45:10,053 INFO  [main] org.springframework.boot.StartupInfoLogger: Started Application in 3.722 seconds (JVM running for 4.494)
+2018-11-04 02:45:18,852 INFO  [http-nio-8080-exec-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-11-04 02:45:18,852 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.FrameworkServlet: FrameworkServlet 'dispatcherServlet': initialization started
+2018-11-04 02:45:18,869 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.FrameworkServlet: FrameworkServlet 'dispatcherServlet': initialization completed in 17 ms

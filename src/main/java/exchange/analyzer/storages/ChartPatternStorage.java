@@ -1,6 +1,6 @@
-package exchange.analyzer.innerLogics.storages;
+package exchange.analyzer.storages;
 
-import exchange.analyzer.innerLogics.Util;
+import exchange.analyzer.Util;
 import exchange.analyzer.model.autochartist.chartpattern.ChartPattern;
 import exchange.analyzer.model.autochartist.chartpattern.Signal;
 import org.springframework.stereotype.Component;
