@@ -7,8 +7,7 @@ public class Points implements Serializable{
     private Point support;
     private Point resistance;
 
-    public Points() {
-    }
+    public Points() {}
 
     public Points(Point support,
                   Point resistance) {

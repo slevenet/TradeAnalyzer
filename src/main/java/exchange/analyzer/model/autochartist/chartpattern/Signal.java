@@ -10,8 +10,7 @@ public class Signal implements Serializable{
     private long    id;
     private Meta    meta;
 
-    public Signal() {
-    }
+    public Signal() {}
 
     public Signal(Data data,
                   String type,

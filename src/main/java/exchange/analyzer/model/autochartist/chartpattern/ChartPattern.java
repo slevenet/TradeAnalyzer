@@ -8,8 +8,7 @@ public class ChartPattern implements Serializable{
     private String provider;
     private List<Signal> signals;
 
-    public ChartPattern() {
-    }
+    public ChartPattern() {}
 
     public ChartPattern(String provider,
                         List<Signal> signals) {

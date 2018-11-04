@@ -2,28 +2,27 @@ package exchange.analyzer.model.autochartist.chartpattern;
 
 import java.io.Serializable;
 
-public class Data implements Serializable{
+public class Data<T extends Prediction, P extends Points> implements Serializable{
 
-    private Prediction  prediction;
-    private Points      points;
-    private long        patternendtime;
+    private T       prediction;
+    private P       points;
+    private long    patternendtime;
 
-    public Data() {
-    }
+    public Data() {}
 
-    public Data(Prediction prediction,
-                Points points,
+    public Data(T prediction,
+                P points,
                 long patternendtime) {
         this.prediction = prediction;
         this.points = points;
         this.patternendtime = patternendtime;
     }
 
-    public Prediction getPrediction() {
+    public T getPrediction() {
         return prediction;
     }
 
-    public Points getPoints() {
+    public P getPoints() {
         return points;
     }
 
