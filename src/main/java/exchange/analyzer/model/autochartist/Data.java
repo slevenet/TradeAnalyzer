@@ -1,8 +1,8 @@
-package exchange.analyzer.model.autochartist.chartpattern;
+package exchange.analyzer.model.autochartist;
 
 import java.io.Serializable;
 
-public class Data<T extends Prediction, P extends Points> implements Serializable{
+public class Data<T extends Prediction, P extends AbstractPoints> implements Serializable{
 
     private T       prediction;
     private P       points;

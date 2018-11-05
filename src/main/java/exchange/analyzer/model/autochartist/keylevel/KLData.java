@@ -1,20 +1,26 @@
 package exchange.analyzer.model.autochartist.keylevel;
 
-import exchange.analyzer.model.autochartist.chartpattern.Data;
-import exchange.analyzer.model.autochartist.chartpattern.Points;
-import exchange.analyzer.model.autochartist.chartpattern.Prediction;
+import exchange.analyzer.model.autochartist.Data;
 
-public class KLData extends Data<KeyLevelPrediction, > {
+public class KLData extends Data<KLPrediction, KLPoints> {
 
 	private Double price;
 
 	public KLData() {}
 
-	public KLData(Prediction prediction,
-				  Points points,
+	public KLData(KLPrediction prediction,
+				  KLPoints points,
 				  long patternendtime,
 				  Double price) {
 		super(prediction, points, patternendtime);
+		this.price = price;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 }

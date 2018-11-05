@@ -1,4 +1,4 @@
-package exchange.analyzer.model.autochartist.chartpattern;
+package exchange.analyzer.model.autochartist;
 
 public class Scores {
 

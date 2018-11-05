@@ -1,8 +1,8 @@
 package exchange.analyzer.dao.implementation;
 
 import exchange.analyzer.dao.interfaces.AutochartistOperations;
-import exchange.analyzer.storages.ChartPatternStorage;
-import exchange.analyzer.model.autochartist.chartpattern.Signal;
+import exchange.analyzer.model.autochartist.chartpattern.ChartPatternSignal;
+import exchange.analyzer.storages.pattern.ChartPatternStorage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,19 +17,19 @@ public class AutochartistOperationsImpl implements AutochartistOperations {
     @Autowired
     private ChartPatternStorage chartPatternStorage;
 
-    public Map<Long, Signal> getPatterns() {
+    public Map<Long, ChartPatternSignal> getChartPatterns() {
         return chartPatternStorage.getPatterns();
     }
 
-    public Map<Long, Signal> getPatterns(String instrument) {
+    public Map<Long, ChartPatternSignal> getChartPatterns(String instrument) {
         return chartPatternStorage.getPatterns();
     }
 
-    public Map<Long, Signal> getPatternMain() {
+    public Map<Long, ChartPatternSignal> getChartPatternMain() {
         return chartPatternStorage.getPatterns();
     }
 
-    public Map<Long, Signal> getPatternMain(String instrument) {
+    public Map<Long, ChartPatternSignal> getChartPatternMain(String instrument) {
         return chartPatternStorage.getPatterns();
     }
 

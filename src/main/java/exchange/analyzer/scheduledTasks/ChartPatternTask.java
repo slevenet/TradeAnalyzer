@@ -2,9 +2,9 @@ package exchange.analyzer.scheduledTasks;
 
 import exchange.analyzer.configuration.common.constants.Constants;
 import exchange.analyzer.configuration.common.constants.ScheduleConstants;
-import exchange.analyzer.storages.ChartPatternStorage;
+import exchange.analyzer.storages.pattern.ChartPatternStorage;
 import exchange.analyzer.model.autochartist.chartpattern.ChartPattern;
-import exchange.analyzer.model.autochartist.chartpattern.ChartPatternRequest;
+import exchange.analyzer.model.autochartist.PatternRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,6 @@ import org.springframework.web.client.RestTemplate;
 
 @Component
 public class ChartPatternTask {
-
     private static final Logger logger = LoggerFactory.getLogger(ChartPatternTask.class);
 
     private RestTemplate restTemplate   = new RestTemplate();
@@ -33,7 +32,10 @@ public class ChartPatternTask {
 
     @Scheduled(fixedRate = 15 * ScheduleConstants.SECOND_FACTOR)
     public void process() {
-       ChartPatternRequest request = new ChartPatternRequest.Builder().build();
+        PatternRequest request = new PatternRequest
+                .Builder()
+                .type("chartpattern")
+                .build();
 
         patternStorage.addPatterns(restTemplate.exchange(
                         request.toString(),

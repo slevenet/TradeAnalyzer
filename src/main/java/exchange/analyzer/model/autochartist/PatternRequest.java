@@ -1,8 +1,8 @@
-package exchange.analyzer.model.autochartist.chartpattern;
+package exchange.analyzer.model.autochartist;
 
 import org.springframework.util.StringUtils;
 
-public class ChartPatternRequest {
+public class PatternRequest {
 
     private static final String URL = "https://api-fxpractice.oanda.com/labs/v1/signal/autochartist";
 
@@ -12,11 +12,11 @@ public class ChartPatternRequest {
     private final String  type;
     private final String  direction;
 
-    private ChartPatternRequest(Builder builder) {
+    private PatternRequest(Builder builder) {
         this.instrument = builder.instrument;
         this.period     = builder.period;
         this.quality    = builder.quality;
-        this.type       = "chartpattern"; // builder.type;
+        this.type       = builder.type;
         this.direction  = builder.direction;
     }
 
@@ -27,8 +27,8 @@ public class ChartPatternRequest {
         private String  type;
         private String  direction;
 
-        public ChartPatternRequest build(){
-            return new ChartPatternRequest(this);
+        public PatternRequest build(){
+            return new PatternRequest(this);
         }
 
         public Builder instrument(String instrument){
