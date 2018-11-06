@@ -1,4 +1,4 @@
-package exchange.analyzer.model.autochartist.chartpattern;
+package exchange.analyzer.model.autochartist;
 
 import java.io.Serializable;
 

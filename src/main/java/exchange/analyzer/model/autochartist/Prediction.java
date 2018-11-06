@@ -1,16 +1,15 @@
-package exchange.analyzer.model.autochartist.chartpattern;
+package exchange.analyzer.model.autochartist;
 
 import java.io.Serializable;
 
 public class Prediction implements Serializable{
 
-    private Double  pricelow;
-    private Double  pricehigh;
-    private long    timefrom;
-    private long    timeto;
+    protected Double  pricelow;
+    protected Double  pricehigh;
+    protected long    timefrom;
+    protected long    timeto;
 
-    public Prediction() {
-    }
+    public Prediction() {}
 
     public Prediction(Double pricelow, Double pricehigh, long timefrom, long timeto) {
         this.pricelow = pricelow;
