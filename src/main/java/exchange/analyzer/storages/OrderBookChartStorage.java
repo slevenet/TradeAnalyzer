@@ -23,7 +23,7 @@ public class OrderBookChartStorage {
         OrderBookChart chart = orderBookChartMap.containsKey(instrumentName)
                 ? orderBookChartMap.get(instrumentName)
                 : new OrderBookChart(instrumentName);
-        chart.addOrderBook(orderBook, analyzeFactory.analyze(orderBook));
+        chart.addOrderBook(orderBook, analyzeFactory.purifyAndAnalyze(orderBook));
 
         orderBookChartMap.putIfAbsent(chart.getInstrumentName(), chart);
     }
