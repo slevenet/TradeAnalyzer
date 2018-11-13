@@ -2,6 +2,8 @@ package exchange.analyzer.scheduledTasks;
 
 import exchange.analyzer.configuration.common.constants.Constants;
 import exchange.analyzer.configuration.common.constants.ScheduleConstants;
+import exchange.analyzer.dao.services.AutochartistOperationsDBService;
+import exchange.analyzer.entity.autochartist.chartpattern.Signal;
 import exchange.analyzer.storages.pattern.ChartPatternStorage;
 import exchange.analyzer.model.autochartist.chartpattern.ChartPattern;
 import exchange.analyzer.model.autochartist.PatternRequest;
@@ -23,6 +25,8 @@ public class ChartPatternTask {
     private HttpHeaders httpHeaders     = new HttpHeaders();
 
     private ChartPatternStorage patternStorage;
+    @Autowired
+    private AutochartistOperationsDBService autochartistOperationsDBService;
 
     @Autowired
     public ChartPatternTask(ChartPatternStorage patternStorage) {
@@ -42,5 +46,8 @@ public class ChartPatternTask {
                         HttpMethod.GET,
                         new HttpEntity<ChartPattern>(httpHeaders),
                         ChartPattern.class).getBody());
+
+      //  autochartistOperationsDBService.addPattern();
+        autochartistOperationsDBService.addPattern();
     }
 }

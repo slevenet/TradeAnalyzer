@@ -13,6 +13,13 @@ public class Scores {
     @Column(name = "scores_id")
     private long id;
 
+    private int clarity;
+    @Column(name = "initial_trend")
+    private int initialtrend;
+    private int breakout;
+    private int quality;
+    private int uniformity;
+
     public long getId() {
         return id;
     }
@@ -41,6 +48,18 @@ public class Scores {
         return breakout;
     }
 
+    public Scores() {
+    }
+
+    public Scores(long id, int clarity, int initialtrend, int breakout, int quality, int uniformity) {
+        this.id = id;
+        this.clarity = clarity;
+        this.initialtrend = initialtrend;
+        this.breakout = breakout;
+        this.quality = quality;
+        this.uniformity = uniformity;
+    }
+
     public void setBreakout(int breakout) {
         this.breakout = breakout;
     }
@@ -60,12 +79,5 @@ public class Scores {
     public void setUniformity(int uniformity) {
         this.uniformity = uniformity;
     }
-
-    private int clarity;
-    private int initialtrend;
-    private int breakout;
-    private int quality;
-    private int uniformity;
-
 
 }

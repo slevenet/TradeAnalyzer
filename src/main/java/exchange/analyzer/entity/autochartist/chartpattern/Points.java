@@ -18,6 +18,18 @@ public class Points {
     private Double supportY1;
     @Column(name = "support_y0")
     private Double supportY0;
+    @Column(name = "support_x0")
+    private long supportX0;
+    @Column(name = "support_x1")
+    private long supportX1;
+    @Column(name = "resistance_y1")
+    private Double resistanceY1;
+    @Column(name = "resistance_y0")
+    private Double resistanceY0;
+    @Column(name = "resistance_x0")
+    private long resistanceX0;
+    @Column(name = "resistance_x1")
+    private long resistanceX1;
 
     public long getId() {
         return id;
@@ -33,6 +45,21 @@ public class Points {
 
     public void setSupportY1(Double supportY1) {
         this.supportY1 = supportY1;
+    }
+
+    public Points() {
+    }
+
+    public Points(long id, Double supportY1, Double supportY0, long supportX0, long supportX1, Double resistanceY1, Double resistanceY0, long resistanceX0, long resistanceX1) {
+        this.id = id;
+        this.supportY1 = supportY1;
+        this.supportY0 = supportY0;
+        this.supportX0 = supportX0;
+        this.supportX1 = supportX1;
+        this.resistanceY1 = resistanceY1;
+        this.resistanceY0 = resistanceY0;
+        this.resistanceX0 = resistanceX0;
+        this.resistanceX1 = resistanceX1;
     }
 
     public Double getSupportY0() {
@@ -90,18 +117,5 @@ public class Points {
     public void setResistanceX1(long resistanceX1) {
         this.resistanceX1 = resistanceX1;
     }
-
-    @Column(name = "support_x0")
-    private long supportX0;
-    @Column(name = "support_x1")
-    private long supportX1;
-    @Column(name = "resistancey1")
-    private Double resistanceY1;
-    @Column(name = "resistance_y0")
-    private Double resistanceY0;
-    @Column(name = "resistance_x0")
-    private long resistanceX0;
-    @Column(name = "resistance_x1")
-    private long resistanceX1;
 
 }

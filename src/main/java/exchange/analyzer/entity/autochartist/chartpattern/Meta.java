@@ -15,14 +15,30 @@ public class Meta {
     private Scores scores;
     private Double probability;
 
+    @Column(name = "`interval`")
     private int interval;
     private int direction;
-    private int length;
+    private int lenght;
 
     private String pattern;
     private String trendtype;
 
     private boolean completed;
+
+    public Meta() {
+    }
+
+    public Meta(long id, Scores scores, Double probability, int interval, int direction, int lenght, String pattern, String trendtype, boolean completed) {
+        this.id = id;
+        this.scores = scores;
+        this.probability = probability;
+        this.interval = interval;
+        this.direction = direction;
+        this.lenght = lenght;
+        this.pattern = pattern;
+        this.trendtype = trendtype;
+        this.completed = completed;
+    }
 
     public long getId() {
         return id;
@@ -65,11 +81,11 @@ public class Meta {
     }
 
     public int getLength() {
-        return length;
+        return lenght;
     }
 
-    public void setLength(int length) {
-        this.length = length;
+    public void setLength(int lenght) {
+        this.lenght = lenght;
     }
 
     public String getPattern() {

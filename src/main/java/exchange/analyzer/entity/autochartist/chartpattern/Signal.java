@@ -12,6 +12,9 @@ public class Signal{
     @JoinColumn(name="data_id")
     private Data data;
 
+    public Signal() {
+    }
+
     private String  type;
 
     @Id
@@ -25,6 +28,14 @@ public class Signal{
 
     public String getInstrument() {
         return instrument;
+    }
+
+    public Signal(String instrument, Data data, String type, long id, Meta meta) {
+        this.instrument = instrument;
+        this.data = data;
+        this.type = type;
+        this.id = id;
+        this.meta = meta;
     }
 
     public void setInstrument(String instrument) {

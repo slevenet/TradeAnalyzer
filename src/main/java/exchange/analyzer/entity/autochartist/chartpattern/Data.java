@@ -18,6 +18,16 @@ public class Data{
     @JoinColumn(name="points_id")
     private Points points;
 
+    public Data() {
+    }
+
+    public Data(long id, Prediction prediction, Points points, long patternendtime) {
+        this.id = id;
+        this.prediction = prediction;
+        this.points = points;
+        this.patternendtime = patternendtime;
+    }
+
     private long        patternendtime;
 
     public long getId() {
