@@ -61,7 +61,7 @@ public class Application {
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
 
         // Package contain entity classes
-     //   factoryBean.setPackagesToScan(new String[] { "" });
+        factoryBean.setPackagesToScan("exchange.analyzer.entity.autochartist.chartpattern");
         factoryBean.setDataSource(dataSource);
         factoryBean.setHibernateProperties(properties);
         factoryBean.afterPropertiesSet();

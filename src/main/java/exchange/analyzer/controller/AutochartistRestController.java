@@ -21,4 +21,5 @@ public class AutochartistRestController {
     public Map<String, Map<Long,List<String>>> getPatterns(@PathVariable String instrument){
         return autochartistOperationsService.getAggregatedData(instrument);
     }
+
 }
