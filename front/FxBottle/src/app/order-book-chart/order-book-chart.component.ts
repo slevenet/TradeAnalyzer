@@ -8,22 +8,25 @@ import {OrderBookService} from "../services/order-book.service";
   styleUrls: ['./order-book-chart.component.css']
 })
 export class OrderBookChartComponent implements OnInit {
-  selectesOrderBookChart:OrderBookChart;
-  OrderBookCharts: OrderBookChart[];
+  selectedOrderBookChart:OrderBookChart;
+  orderBookCharts: OrderBookChart[];
 
   constructor(private orderBookService:OrderBookService) { }
 
   getOrderBooks():void{
     this.orderBookService.getOrderBooks()
-      .subscribe(orderbooks => this.OrderBookCharts = orderbooks)
+      .subscribe(orderbooks => {
+        console.log(orderbooks);
+        this.orderBookCharts = orderbooks
+      })
   }
 
   ngOnInit() {
     this.getOrderBooks();
   }
 
-  onSelect(orderbookchart: OrderBookChart): void{
-    this.selectesOrderBookChart = orderbookchart;
+  onSelect(orderBookChart: OrderBookChart): void{
+    this.selectedOrderBookChart = orderBookChart;
   }
 
 }

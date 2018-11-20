@@ -3,11 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import {OrderBookChart} from "./model/order-book-chart";
 
 const routes: Routes = [
-  {path: 'orderbook/:currency', component: OrderBookChart}
+  {path: 'orderbook', component: OrderBookChart}
 ];
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

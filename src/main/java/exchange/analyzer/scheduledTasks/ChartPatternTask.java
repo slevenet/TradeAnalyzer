@@ -38,12 +38,11 @@ public class ChartPatternTask {
                 .Builder()
                 .type("chartpattern")
                 .build();
-
+      
         patternStorage.addPatterns(restTemplate.exchange(
-                       request.toString(),
-                       HttpMethod.GET,
-                       new HttpEntity<ChartPattern>(httpHeaders),
-                       ChartPattern.class).getBody());
-
+               request.toString(),
+               HttpMethod.GET,
+               new HttpEntity<ChartPattern>(httpHeaders),
+               ChartPattern.class).getBody());
     }
 }

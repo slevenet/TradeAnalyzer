@@ -1,8 +1,11 @@
 package exchange.analyzer.calculations.orderBook.orderAnalyze;
 
+import com.google.gson.annotations.JsonAdapter;
 import com.oanda.v20.instrument.OrderBookBucket;
 import com.oanda.v20.pricing_common.PriceValue;
+import exchange.analyzer.calculations.orderBook.OrderAnalyzeResultAdapter;
 
+@JsonAdapter(OrderAnalyzeResultAdapter.class)
 public class OrderAnalyzeResult {
 	private boolean orderExist;
 	private boolean isNearestBuy;
@@ -85,5 +88,18 @@ public class OrderAnalyzeResult {
 
 	public OrderBookBucket getNearestSell() {
 		return nearestSell;
+	}
+
+	@Override
+	public String toString() {
+		return "OrderAnalyzeResult{" +
+				"orderExist=" + orderExist +
+				", isNearestBuy=" + isNearestBuy +
+				", isNearestSell=" + isNearestSell +
+				", buyOrderPercent=" + buyOrderPercent +
+				", sellOrderPercent=" + sellOrderPercent +
+				", nearestBuy=" + nearestBuy +
+				", nearestSell=" + nearestSell +
+				'}';
 	}
 }

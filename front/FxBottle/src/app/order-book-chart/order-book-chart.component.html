@@ -1,20 +1,35 @@
-<h2>My </h2>
-<ul class="orderbooks">
-  <li *ngFor="let orderchart of OrderBookCharts"
-      [class.selected]="orderchart === selectesOrderBookChart"
-      (click)="onSelect(orderchart)">
-    <span class="badge">{{orderchart.id}}</span> {{orderchart.test}}
+<h2>Here is OrderBook</h2>
+
+<ul class="orderBookCharts">
+  <li *ngFor="let orderBookChart of orderBookCharts"
+      [class.selected]="orderBookChart === selectedOrderBookChart"
+      (click)="onSelect(orderBookChart)">
+    <span class="badge">{{orderBookChart.instrumentName}}</span>
   </li>
 </ul>
 
-<div *ngIf="selectesOrderBookChart">
+<!--<ul class="orderBookCharts">-->
+  <!--<li *ngFor="let orderBookChart of orderBookCharts">-->
+    <!--<span>{{orderBookChart.instrumentName}}</span>-->
+  <!--</li>-->
+<!--</ul>-->
 
-  <h2>{{selectesOrderBookChart.test | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectesOrderBookChart.id}}</div>
-  <div>
-    <label>test:
-      <input [(ngModel)]="selectesOrderBookChart.test" placeholder="test">
-    </label>
-  </div>
+<!--<div *ngIf="selectedOrderBookChart">-->
 
-</div>
+  <!--<h2>{{selectedOrderBookChart.instrumentName | uppercase}} Details</h2>-->
+  <!--<div>-->
+    <!--<label>name:-->
+      <!--<input [(ngModel)]="selectedOrderBookChart.instrumentName" placeholder="name">-->
+    <!--</label>-->
+  <!--</div>-->
+  <!--<div>-->
+    <!--<ul>-->
+      <!--<li *ngFor="let orderBook of selectedOrderBookChart.orderBookMap">-->
+        <!--<span>{{orderBook}}</span>-->
+      <!--</li>-->
+    <!--</ul>-->
+  <!--</div>-->
+
+<!--</div>-->
+
+<!--<app-order-book-chart [orderBookChart]="selectedOrderBookChart"></app-order-book-chart>-->
