@@ -1,4 +1,11 @@
+import DateTimeFormat = Intl.DateTimeFormat;
+import {OrderBook} from "./OrderBook";
+
 export class OrderBookChart {
-  id: number;
-  test: String;
+  instrumentName: string;
+  // private _orderBooks: [string, OrderBook];
+
+  constructor(instrumentName: string) {
+    this.instrumentName = instrumentName;
+  }
 }

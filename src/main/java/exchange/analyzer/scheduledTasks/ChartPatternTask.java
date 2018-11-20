@@ -35,10 +35,10 @@ public class ChartPatternTask {
     public void process() {
        ChartPatternRequest request = new ChartPatternRequest.Builder().build();
 
-        patternStorage.addPatterns(restTemplate.exchange(
-                        request.toString(),
-                        HttpMethod.GET,
-                        new HttpEntity<ChartPattern>(httpHeaders),
-                        ChartPattern.class).getBody());
+       patternStorage.addPatterns(restTemplate.exchange(
+               request.toString(),
+               HttpMethod.GET,
+               new HttpEntity<ChartPattern>(httpHeaders),
+               ChartPattern.class).getBody());
     }
 }
