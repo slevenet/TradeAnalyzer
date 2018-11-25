@@ -26,7 +26,7 @@ public class OrderBookChartJsonSerializer extends JsonSerializer<OrderBookChart>
 
 		jsonGenerator.writeObjectFieldStart("orderBooks");
 		for (Map.Entry<DateTime, OrderBook> entry : orderBookChart.getOrderBookMap().entrySet()) {
-			jsonGenerator.writeObjectField(entry.getKey().toString(), entry.getValue());
+			jsonGenerator.writeObjectField(entry.getKey().toString(), entry.getValue().toString());
 		}
 		jsonGenerator.writeEndObject();
 
