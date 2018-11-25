@@ -1,0 +1,23 @@
+package exchange.analyzer;
+
+import exchange.analyzer.model.Order;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.http.HttpEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
+
+@Lazy
+@Component
+public class OrderManagerMS {
+    private String host = "http://localhost";
+    private String port = "8080";
+    private String password;
+    private String name;
+    private RestTemplate restTemplate   = new RestTemplate();
+
+public void sendOrder(Order order){
+    HttpEntity<Order> requestBody = new HttpEntity<>(order);
+    String endPoint = "";
+    restTemplate.postForObject(endPoint, requestBody,Order.class);
+}
+}
