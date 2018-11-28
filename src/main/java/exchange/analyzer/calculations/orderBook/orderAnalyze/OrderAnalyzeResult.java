@@ -1,12 +1,10 @@
 package exchange.analyzer.calculations.orderBook.orderAnalyze;
 
-import com.google.gson.annotations.JsonAdapter;
 import com.oanda.v20.instrument.OrderBookBucket;
 import com.oanda.v20.pricing_common.PriceValue;
-import exchange.analyzer.calculations.orderBook.OrderAnalyzeResultAdapter;
 
-@JsonAdapter(OrderAnalyzeResultAdapter.class)
 public class OrderAnalyzeResult {
+
 	private boolean orderExist;
 	private boolean isNearestBuy;
 	private boolean isNearestSell;
@@ -15,6 +13,8 @@ public class OrderAnalyzeResult {
 
 	private OrderBookBucket nearestBuy;
 	private OrderBookBucket nearestSell;
+
+	public OrderAnalyzeResult() {}
 
 	public OrderAnalyzeResult(PriceValue marketPrice,
 							  double buyOrderPercent,
@@ -88,6 +88,34 @@ public class OrderAnalyzeResult {
 
 	public OrderBookBucket getNearestSell() {
 		return nearestSell;
+	}
+
+	public void setOrderExist(boolean orderExist) {
+		this.orderExist = orderExist;
+	}
+
+	public void setNearestBuy(boolean nearestBuy) {
+		isNearestBuy = nearestBuy;
+	}
+
+	public void setNearestSell(boolean nearestSell) {
+		isNearestSell = nearestSell;
+	}
+
+	public void setBuyOrderPercent(double buyOrderPercent) {
+		this.buyOrderPercent = buyOrderPercent;
+	}
+
+	public void setSellOrderPercent(double sellOrderPercent) {
+		this.sellOrderPercent = sellOrderPercent;
+	}
+
+	public void setNearestBuy(OrderBookBucket nearestBuy) {
+		this.nearestBuy = nearestBuy;
+	}
+
+	public void setNearestSell(OrderBookBucket nearestSell) {
+		this.nearestSell = nearestSell;
 	}
 
 	@Override

@@ -19,7 +19,6 @@ public class OrderBookChartJsonSerializer extends JsonSerializer<OrderBookChart>
 						  JsonGenerator jsonGenerator,
 						  SerializerProvider serializerProvider) throws IOException {
 
-		System.out.println("-0)_9-()_)(-))(_)9_()");
 		jsonGenerator.writeStartObject();
 
 		jsonGenerator.writeStringField("instrumentName", orderBookChart.getInstrumentName().toString());

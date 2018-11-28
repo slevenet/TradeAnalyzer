@@ -32,7 +32,7 @@ public class ChartPatternTask {
         httpHeaders.set("Authorization", Constants.AUTHORIZATION);
     }
 
-    @Scheduled(fixedRate = 15 * ScheduleConstants.SECOND_FACTOR)
+//    @Scheduled(fixedRate = 15 * ScheduleConstants.SECOND_FACTOR)
     public void process() {
         PatternRequest request = new PatternRequest
                 .Builder()

@@ -23,7 +23,7 @@ public class OrderBookTask extends OandaTask {
     @Autowired
     private OrderBookChartStorage storage;
 
-    @Scheduled(fixedRate = 20 * ScheduleConstants.SECOND_FACTOR)
+    @Scheduled(fixedRate = 5 * ScheduleConstants.MINUTE_FACTOR)
     public void process(){
         BasicConstant.SUPPORTED_INSTRUMENT.forEach(currency ->
         {
