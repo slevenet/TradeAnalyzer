@@ -27,8 +27,8 @@ public class MainRestController {
         return new ArrayList<>(orderBookChartStorage.getOrderBookChartMap().values());
     }
 
-    @GetMapping("/ogo")
-    public List<CandlestickChart> name() {
-        return candlestickChartStorage.getCandlestickChartList();
-    }
+  //  @GetMapping("/ogo")
+ //   public List<CandlestickChart> name() {
+  //      return candlestickChartStorage.getCandlestickChartList();
+  //  }
 }
