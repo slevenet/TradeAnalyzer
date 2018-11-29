@@ -2,6 +2,8 @@ package exchange.analyzer.scheduledTasks;
 
 import exchange.analyzer.configuration.common.constants.Constants;
 import exchange.analyzer.configuration.common.constants.ScheduleConstants;
+import exchange.analyzer.dao.services.AutochartistOperationsDBService;
+import exchange.analyzer.entity.autochartist.chartpattern.Signal;
 import exchange.analyzer.storages.pattern.ChartPatternStorage;
 import exchange.analyzer.model.autochartist.chartpattern.ChartPattern;
 import exchange.analyzer.model.autochartist.PatternRequest;
@@ -30,7 +32,7 @@ public class ChartPatternTask {
         httpHeaders.set("Authorization", Constants.AUTHORIZATION);
     }
 
-    @Scheduled(fixedRate = 15 * ScheduleConstants.SECOND_FACTOR)
+//    @Scheduled(fixedRate = 15 * ScheduleConstants.SECOND_FACTOR)
     public void process() {
         PatternRequest request = new PatternRequest
                 .Builder()

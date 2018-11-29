@@ -9,6 +9,8 @@ public class OrderAnalyzeInfo {
 	private OrderAnalyzeResult stopLossResult;
 	private OrderAnalyzeResult takeProfitResult;
 
+	public OrderAnalyzeInfo() {}
+
 	public OrderAnalyzeInfo(OrderAnalyzeResult stopLossResult,
 							OrderAnalyzeResult takeProfitResult) {
 		this.stopLossResult = stopLossResult;
@@ -21,6 +23,14 @@ public class OrderAnalyzeInfo {
 
 	public OrderAnalyzeResult getTakeProfitResult() {
 		return takeProfitResult;
+	}
+
+	public void setStopLossResult(OrderAnalyzeResult stopLossResult) {
+		this.stopLossResult = stopLossResult;
+	}
+
+	public void setTakeProfitResult(OrderAnalyzeResult takeProfitResult) {
+		this.takeProfitResult = takeProfitResult;
 	}
 
 	@Override
