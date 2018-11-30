@@ -1,6 +1,6 @@
-package exchange.analyzer.scheduledTasks.abstracts;
+package exchange.analyzer.scheduledTasks;
 
-import exchange.analyzer.scheduledTasks.interfaces.Task;
+
 import exchange.analyzer.model.OandaContext;
 import org.springframework.beans.factory.annotation.Autowired;
 
