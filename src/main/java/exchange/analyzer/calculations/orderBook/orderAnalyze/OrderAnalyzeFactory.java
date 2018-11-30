@@ -18,7 +18,7 @@ public class OrderAnalyzeFactory {
 
 	private OrderAnalyzeFactory() {}
 
-	public OrderAnalyzeInfo analyze(OrderBook orderBook) {
+	private OrderAnalyzeInfo analyze(OrderBook orderBook) {
 
 		OrderAnalyzeResult stopLossResult 	= stopLossAnalyzer.analyze(orderBook);
 		OrderAnalyzeResult takeProfitResult = takeProfitAnalyzer.analyze(orderBook);
@@ -30,7 +30,7 @@ public class OrderAnalyzeFactory {
 		return analyze(purify(orderBook));
 	}
 
-	public OrderBook purify(OrderBook orderBook) {
+	private OrderBook purify(OrderBook orderBook) {
 		OrderBook pure = new OrderBook();
 		pure.setInstrument(orderBook.getInstrument());
 		pure.setTime(orderBook.getTime());

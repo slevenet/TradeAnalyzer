@@ -1,10 +1,13 @@
 package exchange.analyzer.calculations;
 
 import exchange.analyzer.OrderManagerMS;
+import exchange.analyzer.configuration.common.constants.BasicConstant;
 import exchange.analyzer.model.Order;
 import exchange.analyzer.model.autochartist.chartpattern.ChartPatternSignal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import static exchange.analyzer.Util.getPointsByInstrument;
 
 @Component
 public class CalculateOrder {
@@ -15,17 +18,20 @@ public class CalculateOrder {
 
     public void calculateOrder(ChartPatternSignal pattern){
         double sl=0, tp=0, price=0;
-        if(pattern.getMeta().getDirection() == 1){
-            sl = pattern.getData().getPrediction().getPricehigh();
-            tp = pattern.getData().getPrediction().getPricelow();
-            price = pattern.getData().getPoints().getResistance().getY1();// + 10pp To Do function
+        String instrument = pattern.getInstrument();
+        //if BEARISH (open sell order)
+        if(pattern.getMeta().getDirection() == BasicConstant.BEARISH){
+            sl = pattern.getData().getPrediction().getPricehigh() - getPointsByInstrument(instrument, 7);
+            tp = pattern.getData().getPrediction().getPricelow() +  getPointsByInstrument(instrument, 5);
+            price = pattern.getData().getPoints().getResistance().getY1();
         }
+        //if BULLISH (open buy order)
         else{
-            tp = pattern.getData().getPrediction().getPricehigh();
-            sl = pattern.getData().getPrediction().getPricelow();
-            price = pattern.getData().getPoints().getResistance().getY1();// - 10pp To Do function
+            tp = pattern.getData().getPrediction().getPricehigh() - getPointsByInstrument(instrument, 5);
+            sl = pattern.getData().getPrediction().getPricelow() + getPointsByInstrument(instrument, 7);
+            price = pattern.getData().getPoints().getResistance().getY1();
         }
-        order = new Order("strategy",  "order_type",  sl,  tp,price, pattern.getInstrument());
+        order = new Order("strategy",  "order_type",  sl,  tp, price, instrument);
         orderManagerMS.sendOrder(order);
     }
 }
