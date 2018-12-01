@@ -7,7 +7,7 @@ import com.oanda.v20.primitives.DateTime;
 import com.oanda.v20.primitives.InstrumentName;
 import exchange.analyzer.configuration.common.constants.BasicConstant;
 import exchange.analyzer.configuration.common.constants.ScheduleConstants;
-import exchange.analyzer.scheduledTasks.abstracts.OandaTask;
+import exchange.analyzer.scheduledTasks.OandaTask;
 import exchange.analyzer.storages.CandlestickChartStorage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +21,7 @@ public class CandlestickTask extends OandaTask {
   //  @Autowired
     private CandlestickChartStorage chartStorage;
 
-    @Scheduled(fixedRate = 15 * ScheduleConstants.MINUTE_FACTOR)
+//    @Scheduled(fixedRate = 15 * ScheduleConstants.MINUTE_FACTOR)
     public void process(){
         BasicConstant.SUPPORTED_INSTRUMENT.forEach(currency ->
         {

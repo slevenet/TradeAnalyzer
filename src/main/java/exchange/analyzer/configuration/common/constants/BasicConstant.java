@@ -23,6 +23,6 @@ final public class BasicConstant {
         put("USD_CAD",0.0001);
         put("USD_CHF",0.0001);
         put("USD_JPY",0.01);
-        put("XAU_USD",0.0001);
+        put("XAU_USD",0.01);
     }};
 }

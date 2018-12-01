@@ -19,19 +19,22 @@ public class CalculateOrder {
     public void calculateOrder(ChartPatternSignal pattern){
         double sl=0, tp=0, price=0;
         String instrument = pattern.getInstrument();
+        String order_type = "";
         //if BEARISH (open sell order)
         if(pattern.getMeta().getDirection() == BasicConstant.BEARISH){
-            sl = pattern.getData().getPrediction().getPricehigh() - getPointsByInstrument(instrument, 7);
-            tp = pattern.getData().getPrediction().getPricelow() +  getPointsByInstrument(instrument, 5);
-            price = pattern.getData().getPoints().getResistance().getY1();
+            sl = pattern.getData().getPoints().getResistance().getY1() + getPointsByInstrument(instrument, 7);
+            tp = pattern.getData().getPrediction().getPricehigh() +  getPointsByInstrument(instrument, 5);
+            price = pattern.getData().getPoints().getSupport().getY1();
+            order_type = "sell";
         }
         //if BULLISH (open buy order)
         else{
-            tp = pattern.getData().getPrediction().getPricehigh() - getPointsByInstrument(instrument, 5);
-            sl = pattern.getData().getPrediction().getPricelow() + getPointsByInstrument(instrument, 7);
+            tp = pattern.getData().getPrediction().getPricelow() - getPointsByInstrument(instrument, 5);
+            sl = pattern.getData().getPoints().getSupport().getY1() - getPointsByInstrument(instrument, 7);
             price = pattern.getData().getPoints().getResistance().getY1();
+            order_type = "buy";
         }
-        order = new Order("strategy",  "order_type",  sl,  tp, price, instrument);
+        order = new Order("strategy",  order_type,  sl,  tp, price, instrument);
         orderManagerMS.sendOrder(order);
     }
 }

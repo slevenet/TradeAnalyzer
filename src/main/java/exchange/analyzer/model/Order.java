@@ -68,4 +68,16 @@ public class Order {
     public String getInstrument() {
         return instrument;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "strategy='" + strategy + '\'' +
+                ", order_type='" + order_type + '\'' +
+                ", sl=" + sl +
+                ", tp=" + tp +
+                ", price=" + price +
+                ", instrument='" + instrument + '\'' +
+                '}';
+    }
 }

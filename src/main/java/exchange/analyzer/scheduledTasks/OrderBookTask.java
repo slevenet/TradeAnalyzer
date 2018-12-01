@@ -7,7 +7,6 @@ import com.oanda.v20.instrument.OrderBook;
 import com.oanda.v20.primitives.InstrumentName;
 import exchange.analyzer.configuration.common.constants.BasicConstant;
 import exchange.analyzer.configuration.common.constants.ScheduleConstants;
-import exchange.analyzer.scheduledTasks.abstracts.OandaTask;
 import exchange.analyzer.storages.OrderBookChartStorage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +22,7 @@ public class OrderBookTask extends OandaTask {
     @Autowired
     private OrderBookChartStorage storage;
 
-    @Scheduled(fixedRate = 5 * ScheduleConstants.MINUTE_FACTOR)
+//    @Scheduled(fixedRate = 5 * ScheduleConstants.MINUTE_FACTOR)
     public void process(){
         BasicConstant.SUPPORTED_INSTRUMENT.forEach(currency ->
         {

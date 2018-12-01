@@ -2,15 +2,15 @@ package exchange.analyzer.dao.services;
 
 
 //import exchange.analyzer.model.autochartist.chartpattern.Signal;
+import exchange.analyzer.calculations.CalculateOrder;
 import exchange.analyzer.entity.autochartist.chartpattern.Signal;
 import exchange.analyzer.model.autochartist.chartpattern.ChartPattern;
 import exchange.analyzer.model.autochartist.chartpattern.ChartPatternSignal;
-import exchange.analyzer.tests.MockiSignal;
 import exchange.analyzer.utils.ConvertorFromModelToEntity;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Propagation;
+
 
 import javax.transaction.Transactional;
 
@@ -20,6 +20,9 @@ public class AutochartistOperationsDBService {
 
     @Autowired
     private SessionFactory sessionFactory;
+
+    @Autowired
+    private CalculateOrder CalculateOrder;
 
     // MANDATORY: Transaction must be created before.
 
@@ -36,7 +39,9 @@ public class AutochartistOperationsDBService {
     }
 
     public <S extends exchange.analyzer.model.autochartist.Signal> void addPattern(S pattern) {
-        if (sessionFactory.getCurrentSession().get(Signal.class, pattern.getId())== null)
+        if (sessionFactory.getCurrentSession().get(Signal.class, pattern.getId())== null) {
             sessionFactory.getCurrentSession().save(ConvertorFromModelToEntity.getPatternEntity((ChartPatternSignal) pattern));
+            CalculateOrder.calculateOrder((ChartPatternSignal) pattern);
+        }
     }
 }
