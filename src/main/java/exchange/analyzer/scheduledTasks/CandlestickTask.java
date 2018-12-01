@@ -7,10 +7,10 @@ import com.oanda.v20.primitives.DateTime;
 import com.oanda.v20.primitives.InstrumentName;
 import exchange.analyzer.configuration.common.constants.BasicConstant;
 import exchange.analyzer.configuration.common.constants.ScheduleConstants;
-import exchange.analyzer.scheduledTasks.OandaTask;
 import exchange.analyzer.storages.CandlestickChartStorage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 
 //@Component
@@ -18,7 +18,7 @@ public class CandlestickTask extends OandaTask {
 
     private static final Logger logger = LoggerFactory.getLogger(CandlestickTask.class);
 
-  //  @Autowired
+    @Autowired
     private CandlestickChartStorage chartStorage;
 
 //    @Scheduled(fixedRate = 15 * ScheduleConstants.MINUTE_FACTOR)

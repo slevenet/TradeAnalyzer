@@ -2,10 +2,20 @@ import DateTimeFormat = Intl.DateTimeFormat;
 import {OrderBook} from "./OrderBook";
 
 export class OrderBookChart {
-  instrumentName: string;
-  // private _orderBooks: [string, OrderBook];
+  private instrumentName: string;
+  private orderBooks: [string, OrderBook];
 
-  constructor(instrumentName: string) {
+
+  constructor(instrumentName: string, orderBooks: [string, OrderBook]) {
     this.instrumentName = instrumentName;
+    this.orderBooks = orderBooks;
+  }
+
+  getInstrumentName(): string {
+    return this.instrumentName;
+  }
+
+  getOrderBooks(): [string, OrderBook] {
+    return this.orderBooks;
   }
 }

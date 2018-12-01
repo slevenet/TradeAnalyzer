@@ -16,8 +16,7 @@ export class OrderBookChartComponent implements OnInit {
   getOrderBooks():void{
     this.orderBookService.getOrderBooks()
       .subscribe(orderbooks => {
-        console.log(orderbooks);
-        this.orderBookCharts = orderbooks
+        this.orderBookCharts = orderbooks;
       })
   }
 

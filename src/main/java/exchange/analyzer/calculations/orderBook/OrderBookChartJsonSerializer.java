@@ -24,12 +24,11 @@ public class OrderBookChartJsonSerializer extends JsonSerializer<OrderBookChart>
 		jsonGenerator.writeStringField("instrumentName", orderBookChart.getInstrumentName().toString());
 
 		jsonGenerator.writeObjectFieldStart("orderBooks");
-		for (Map.Entry<DateTime, OrderBook> entry : orderBookChart.getOrderBookMap().entrySet()) {
+		for (Map.Entry<DateTime, OrderBook> entry : orderBookChart.getOrderBookMap().entrySet())
 			jsonGenerator.writeObjectField(entry.getKey().toString(), entry.getValue());
-		}
+
 		jsonGenerator.writeEndObject();
 
 		jsonGenerator.writeEndObject();
-		jsonGenerator.close();
 	}
 }
