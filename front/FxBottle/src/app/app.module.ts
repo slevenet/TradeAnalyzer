@@ -7,6 +7,13 @@ import { OrderBookChartComponent } from './order-book-chart/order-book-chart.com
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { AutochartistComponent } from './autochartist/autochartist.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {SharedModule} from "primeng/shared";
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
+import { DialogModule } from 'primeng/dialog'
+import {ChartModule, UIChart} from "primeng/chart";
 
 @NgModule({
   declarations: [
@@ -18,7 +25,14 @@ import { AutochartistComponent } from './autochartist/autochartist.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    InputTextModule,
+    ButtonModule,
+    TableModule,
+    DialogModule,
+    ChartModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],

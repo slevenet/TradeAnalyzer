@@ -5,10 +5,12 @@ import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.oanda.v20.instrument.OrderBook;
 import com.oanda.v20.primitives.DateTime;
+import com.oanda.v20.primitives.StringPrimitive;
 import exchange.analyzer.model.charts.OrderBookChart;
 import org.springframework.boot.jackson.JsonComponent;
 
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.Map;
 
 @JsonComponent
@@ -23,11 +25,13 @@ public class OrderBookChartJsonSerializer extends JsonSerializer<OrderBookChart>
 
 		jsonGenerator.writeStringField("instrumentName", orderBookChart.getInstrumentName().toString());
 
-		jsonGenerator.writeObjectFieldStart("orderBooks");
-		for (Map.Entry<DateTime, OrderBook> entry : orderBookChart.getOrderBookMap().entrySet())
-			jsonGenerator.writeObjectField(entry.getKey().toString(), entry.getValue());
-
-		jsonGenerator.writeEndObject();
+		OrderBook book = orderBookChart.getOrderBookMap()
+				.get(orderBookChart.getOrderBookMap().keySet()
+						.stream()
+						.sorted(Comparator.comparing(StringPrimitive::toString))
+						.reduce((a, b) -> b)
+						.get());
+		jsonGenerator.writeObjectField("orderBook", book);
 
 		jsonGenerator.writeEndObject();
 	}
