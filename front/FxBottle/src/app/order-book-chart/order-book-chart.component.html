@@ -8,28 +8,26 @@
   </li>
 </ul>
 
-<!--<ul class="orderBookCharts">-->
-  <!--<li *ngFor="let orderBookChart of orderBookCharts">-->
-    <!--<span>{{orderBookChart.instrumentName}}</span>-->
-  <!--</li>-->
-<!--</ul>-->
+<div *ngIf="currentChart">
+  <p-button icon="pi pi-check" label="Click"></p-button>
+  <br>
+  <p-chart type="horizontalBar" [data]="currentChart"></p-chart>
+</div>
 
 <!--<div *ngIf="selectedOrderBookChart">-->
 
-  <!--<h2>{{selectedOrderBookChart.instrumentName | uppercase}} Details</h2>-->
+  <!--<h2>{{selectedOrderBookChart.getInstrumentName() | uppercase}} Details</h2>-->
   <!--<div>-->
     <!--<label>name:-->
-      <!--<input [(ngModel)]="selectedOrderBookChart.instrumentName" placeholder="name">-->
+      <!--<input [(ngModel)]="selectedOrderBookChart.getInstrumentName()" placeholder="name">-->
     <!--</label>-->
   <!--</div>-->
   <!--<div>-->
     <!--<ul>-->
-      <!--<li *ngFor="let orderBook of selectedOrderBookChart.orderBookMap">-->
+      <!--<li *ngFor="let orderBook of selectedOrderBookChart.getOrderBooks()">-->
         <!--<span>{{orderBook}}</span>-->
       <!--</li>-->
     <!--</ul>-->
   <!--</div>-->
 
 <!--</div>-->
-
-<!--<app-order-book-chart [orderBookChart]="selectedOrderBookChart"></app-order-book-chart>-->

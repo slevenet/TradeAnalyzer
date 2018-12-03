@@ -1,26 +1,18 @@
 import {OrderBookBucket} from "./OrderBookBucket";
 
 export class OrderBook {
-  private _instrumentName: string;
+  private instrumentName: string;
   private _time: string;
   private _price: string;
   private _bucketWidth: string;
   private _buckets: OrderBookBucket[];
 
   constructor(instrumentName: string, time: string, price: string, bucketWidth: string, buckets: OrderBookBucket[]) {
-    this._instrumentName = instrumentName;
+    this.instrumentName = instrumentName;
     this._time = time;
     this._price = price;
     this._bucketWidth = bucketWidth;
     this._buckets = buckets;
-  }
-
-  get instrumentName(): string {
-    return this._instrumentName;
-  }
-
-  set instrumentName(value: string) {
-    this._instrumentName = value;
   }
 
   get time(): string {
