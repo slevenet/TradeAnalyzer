@@ -9,9 +9,7 @@
 </ul>
 
 <div *ngIf="currentChart">
-  <p-button icon="pi pi-check" label="Click"></p-button>
-  <br>
-  <p-chart type="horizontalBar" [data]="currentChart"></p-chart>
+  <p-chart type="horizontalBar" [data]="currentChart" [options]="options"></p-chart>
 </div>
 
 <!--<div *ngIf="selectedOrderBookChart">-->

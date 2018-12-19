@@ -1,6 +1,7 @@
 export class BarDataset {
   private _label: string;
   private _data: number[];
+  backgroundColor: string = 'blue';
 
   constructor(label: string, data: number[]) {
     this._label = label;
