@@ -4,6 +4,7 @@ import {OrderBookService} from "../services/order-book.service";
 import {OrderBookChartData} from "../model/order-book-chart-data";
 import {OrderBook} from "../model/OrderBook";
 import {BarDataset} from "../model/bar-dataset";
+import {OrderBookBucket} from "../model/OrderBookBucket";
 
 @Component({
   selector: 'app-order-book-chart',
@@ -14,6 +15,28 @@ export class OrderBookChartComponent implements OnInit {
   selectedOrderBookChart:OrderBookChart;
   orderBookCharts: OrderBookChart[];
   currentChart: OrderBookChartData;
+  options = {
+    responsive: true,
+    scales: {
+      yAxes: [{
+        gridLines : {
+          display : false
+        },
+        ticks: {
+          callback: function(dataLabel, index) {
+            return index % 7 === 0 ? dataLabel : '';
+          }
+        }
+      }],
+      xAxes: [{
+        ticks: {
+          min: -4,
+          max: 4,
+          stepSize: 0.5
+        }
+      }]
+    }
+  };
 
   constructor(private orderBookService:OrderBookService) { }
 
@@ -31,24 +54,35 @@ export class OrderBookChartComponent implements OnInit {
   onSelect(orderBookChart: OrderBookChart): void {
     this.selectedOrderBookChart = orderBookChart;
     this.initChartData();
+    console.log(this.selectedOrderBookChart);
   }
 
   private initChartData(): void {
-    let book: OrderBook = this.orderBookCharts[0].orderBook;
+    let book: OrderBook = this.selectedOrderBookChart.orderBook;
+    let labels: string[] = [];
+
+    let marketPriceIndex : number = this.getMarketPriceIndex();
+
+    let neededBuckets : OrderBookBucket[] = book.buckets.slice(marketPriceIndex - 25, marketPriceIndex + 26);
+
+    for (let bucket of neededBuckets) {
+      labels.push(bucket.price);
+    }
+
+    console.log(neededBuckets);
+
+    let datasets: BarDataset = new BarDataset(book.time, neededBuckets.map(x => x.longCountPercent - x.shortCountPercent));
+    this.currentChart = new OrderBookChartData(labels, datasets);
+  }
+
+  private getMarketPriceIndex() {
+    let book: OrderBook = this.selectedOrderBookChart.orderBook;
+
     for (let i = 0; i < book.buckets.length; i++) {
       if (book.buckets[i].price < book.price)
         continue;
 
-      var start: number = +book.buckets[i-5].price;
-      break;
+      return i;
     }
-
-    let labels: string[] = [];
-    for (let i = 0; i < 10; i++)
-      labels.push((start += (+book.bucketWidth)).toFixed(5).toString());
-
-    let datasets: BarDataset = new BarDataset(book.time, book.buckets.map(x => x.longCountPercent - x.shortCountPercent));
-    this.currentChart = new OrderBookChartData(labels, datasets);
-    console.log(this.currentChart);
   }
 }
