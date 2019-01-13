@@ -19,7 +19,9 @@ public abstract class PatternStorage<S extends Signal, P extends Pattern<S>> {
 	@Autowired
 	private AutochartistOperationsDBService autochartistOperationsDBService;
 
+	//TO DO:FIXED STOR
 	public void addPatterns(P pattern){
+		patterns.clear();
 		pattern.getSignals().forEach(signal -> {
 			if (Util.isSupportedInstrument(signal.getInstrument())) {
 				patterns.putIfAbsent(signal.getId(), signal);

@@ -22,7 +22,7 @@ public class OrderBookTask extends OandaTask {
     @Autowired
     private OrderBookChartStorage storage;
 
-    @Scheduled(fixedRate = 5 * ScheduleConstants.MINUTE_FACTOR)
+    @Scheduled(fixedRate = 15 * ScheduleConstants.MINUTE_FACTOR)
     public void process(){
         BasicConstant.SUPPORTED_INSTRUMENT.forEach(currency ->
         {
@@ -30,6 +30,7 @@ public class OrderBookTask extends OandaTask {
             InstrumentOrderBookRequest request  = new InstrumentOrderBookRequest(instrumentName);
 
             try {
+                storage.clearDate();
                 OrderBook orderBook = oandaContext.getContext().instrument.orderBook(request).getOrderBook();
                 storage.addOrderBook(orderBook);
             } catch (RequestException | ExecuteException e) {

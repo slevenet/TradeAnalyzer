@@ -22,6 +22,10 @@ public class OrderBookChartStorage {
 
     private Map<InstrumentName, OrderBookChart> orderBookChartMap = new HashMap<>();
 
+   public void clearDate(){
+       orderBookChartMap.clear();
+   }
+
     public void addOrderBook(OrderBook orderBook){
         InstrumentName instrumentName = orderBook.getInstrument();
 

@@ -10,14 +10,14 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class OrderManagerMS {
     private String host = "http://localhost";
-    private String port = ":8090";
+    private String port = ":8080";
     private String password;
     private String name;
     private RestTemplate restTemplate   = new RestTemplate();
 
 public void sendOrder(Order order){
     HttpEntity<Order> requestBody = new HttpEntity<>(order);
-    String endPoint = host + port + "/rest";
+    String endPoint = host + port + "/ordermanager/rest";
     restTemplate.postForObject(endPoint, requestBody,Order.class);
     System.out.println(requestBody.getBody().toString());
 }
