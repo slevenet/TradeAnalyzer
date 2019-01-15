@@ -1,12 +1,12 @@
 package exchange.analyzer.scheduledTasks;
 
+import com.google.gson.GsonBuilder;
 import exchange.analyzer.configuration.common.constants.Constants;
 import exchange.analyzer.configuration.common.constants.ScheduleConstants;
-import exchange.analyzer.dao.services.AutochartistOperationsDBService;
-import exchange.analyzer.entity.autochartist.chartpattern.Signal;
-import exchange.analyzer.storages.pattern.ChartPatternStorage;
-import exchange.analyzer.model.autochartist.chartpattern.ChartPattern;
-import exchange.analyzer.model.autochartist.PatternRequest;
+import exchange.analyzer.model.ChartPatternModelDeserializerFromJSON;
+import exchange.analyzer.model.charts.ChartPatternModel;
+import exchange.analyzer.service.impl.SignalServiceImpl;
+import exchange.analyzer.configuration.common.PatternRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,14 +21,13 @@ import org.springframework.web.client.RestTemplate;
 public class ChartPatternTask {
     private static final Logger logger = LoggerFactory.getLogger(ChartPatternTask.class);
 
+    @Autowired
+    private SignalServiceImpl signalService;
+
     private RestTemplate restTemplate   = new RestTemplate();
     private HttpHeaders httpHeaders     = new HttpHeaders();
 
-    private ChartPatternStorage patternStorage;
-
-    @Autowired
-    public ChartPatternTask(ChartPatternStorage patternStorage) {
-        this.patternStorage = patternStorage;
+    public ChartPatternTask() {
         httpHeaders.set("Authorization", Constants.AUTHORIZATION);
     }
 
@@ -38,11 +37,14 @@ public class ChartPatternTask {
                 .Builder()
                 .type("chartpattern")
                 .build();
-      
-        patternStorage.addPatterns(restTemplate.exchange(
-               request.toString(),
-               HttpMethod.GET,
-               new HttpEntity<ChartPattern>(httpHeaders),
-               ChartPattern.class).getBody());
+
+        GsonBuilder jsonbuilder = new GsonBuilder()
+                .registerTypeAdapter(ChartPatternModel.class, new ChartPatternModelDeserializerFromJSON());
+
+        signalService.addSignal(jsonbuilder.create().fromJson(restTemplate.exchange(
+                request.toString(),
+                HttpMethod.GET,
+                new HttpEntity<ChartPatternModel>(httpHeaders),
+                String.class).getBody() , ChartPatternModel.class));
     }
 }
