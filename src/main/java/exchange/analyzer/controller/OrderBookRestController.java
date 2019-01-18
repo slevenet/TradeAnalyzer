@@ -1,7 +1,6 @@
 package exchange.analyzer.controller;
 
 import exchange.analyzer.model.charts.OrderBookChart;
-import exchange.analyzer.storages.OrderBookChartStorage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

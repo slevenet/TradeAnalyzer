@@ -1,7 +1,7 @@
 package exchange.analyzer;
 
-import static exchange.analyzer.configuration.common.constants.BasicConstant.SUPPORTED_INSTRUMENT;
-import static exchange.analyzer.configuration.common.constants.BasicConstant.TABLEONEPOINT;
+
+import static exchange.analyzer.configuration.common.constants.BasicConstant.*;
 
 public class Util {
 
@@ -9,7 +9,4 @@ public class Util {
         return SUPPORTED_INSTRUMENT.stream().anyMatch(instrument::equals);
     }
 
-    public static double getPointsByInstrument(String instrument, int points){
-       return TABLEONEPOINT.get(instrument) * points;
-    }
 }

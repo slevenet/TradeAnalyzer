@@ -1,4 +1,4 @@
-package exchange.analyzer.scheduledTasks;
+package exchange.analyzer.shedulers;
 
 import com.google.gson.GsonBuilder;
 import exchange.analyzer.configuration.common.constants.Constants;
@@ -18,8 +18,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 @Component
-public class ChartPatternTask {
-    private static final Logger logger = LoggerFactory.getLogger(ChartPatternTask.class);
+public class ChartPatternComponentSheduler {
+    private static final Logger logger = LoggerFactory.getLogger(ChartPatternComponentSheduler.class);
 
     @Autowired
     private SignalServiceImpl signalService;
@@ -27,7 +27,7 @@ public class ChartPatternTask {
     private RestTemplate restTemplate   = new RestTemplate();
     private HttpHeaders httpHeaders     = new HttpHeaders();
 
-    public ChartPatternTask() {
+    public ChartPatternComponentSheduler() {
         httpHeaders.set("Authorization", Constants.AUTHORIZATION);
     }
 

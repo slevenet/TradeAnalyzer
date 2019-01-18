@@ -1,4 +1,4 @@
-package exchange.analyzer.scheduledTasks;
+package exchange.analyzer.shedulers;
 
 import com.oanda.v20.ExecuteException;
 import com.oanda.v20.RequestException;
@@ -7,7 +7,6 @@ import com.oanda.v20.instrument.OrderBook;
 import com.oanda.v20.primitives.InstrumentName;
 import exchange.analyzer.configuration.common.constants.BasicConstant;
 import exchange.analyzer.configuration.common.constants.ScheduleConstants;
-import exchange.analyzer.storages.OrderBookChartStorage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +14,9 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
-public class OrderBookTask extends OandaTask {
+public class OrderBookComponentSheduler extends OandaComponentSheduler {
 
-    private static final Logger logger = LoggerFactory.getLogger(OrderBookTask.class);
+    private static final Logger logger = LoggerFactory.getLogger(OrderBookComponentSheduler.class);
 
     @Autowired
     private OrderBookChartStorage storage;
