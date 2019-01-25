@@ -5,7 +5,6 @@ import com.oanda.v20.instrument.CandlestickGranularity;
 import com.oanda.v20.primitives.DateTime;
 import com.oanda.v20.primitives.InstrumentName;
 import exchange.analyzer.calculations.candlestick.EventManager;
-import exchange.analyzer.calculations.candlestick.Events;
 import exchange.analyzer.configuration.common.keyManager.CurrencyKey;
 import exchange.analyzer.configuration.common.keyManager.KeyManager;
 import org.springframework.stereotype.Component;

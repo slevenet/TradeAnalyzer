@@ -1,8 +1,5 @@
 package exchange.analyzer.controller;
 
-import exchange.analyzer.model.charts.CandlestickChart;
-import exchange.analyzer.storages.CandlestickChartStorage;
-import exchange.analyzer.storages.OrderBookChartStorage;
 import exchange.analyzer.model.charts.OrderBookChart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

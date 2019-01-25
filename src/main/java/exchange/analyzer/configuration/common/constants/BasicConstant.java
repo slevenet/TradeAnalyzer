@@ -25,4 +25,18 @@ final public class BasicConstant {
         put("USD_JPY",0.01);
         put("XAU_USD",0.01);
     }};
+
+    public static final Map<String, Double> TABLEONEPOINTINT = new HashMap() {{
+        put("EUR_USD",10000);
+        put("AUD_USD",10000);
+        put("EUR_AUD",10000);
+        put("EUR_JPY",100);
+        put("GBP_JPY",100);
+        put("GBP_USD",10000);
+        put("NZD_USD",10000);
+        put("USD_CAD",10000);
+        put("USD_CHF",10000);
+        put("USD_JPY",100);
+        put("XAU_USD",100);
+    }};
 }
