@@ -17,8 +17,7 @@ public class CandlestickComponentSheduler extends OandaComponentSheduler {
 
     private static final Logger logger = LoggerFactory.getLogger(CandlestickComponentSheduler.class);
 
-    @Autowired
-    private CandlestickChartStorage chartStorage;
+
 
 //    @Scheduled(fixedRate = 15 * ScheduleConstants.MINUTE_FACTOR)
     public void process(){
@@ -34,13 +33,8 @@ public class CandlestickComponentSheduler extends OandaComponentSheduler {
                 CandlestickGranularity granularity = CandlestickGranularity.valueOf(requestedGranularity);
                 request.setGranularity(granularity);
 
-                DateTime lastTimestamp = chartStorage.getLastTimestamp(instrumentName, granularity);
-                if (lastTimestamp != null)
-                    request.setFrom(lastTimestamp);
-
                 try {
                     InstrumentCandlesResponse candlesResponse = oandaContext.getContext().instrument.candles(request);
-                    chartStorage.addChart(instrumentName, granularity, candlesResponse.getCandles());
                 } catch (Exception e) {
                     logger.error("Error during candlestick task", e);
                 }

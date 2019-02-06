@@ -4,7 +4,6 @@ import com.google.gson.GsonBuilder;
 import exchange.analyzer.configuration.common.constants.Constants;
 import exchange.analyzer.configuration.common.constants.ScheduleConstants;
 import exchange.analyzer.model.ChartPatternModelDeserializerFromJSON;
-import exchange.analyzer.model.charts.ChartPatternModel;
 import exchange.analyzer.service.impl.SignalServiceImpl;
 import exchange.analyzer.configuration.common.PatternRequest;
 import org.slf4j.Logger;
