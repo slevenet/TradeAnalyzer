@@ -1,15 +1,29 @@
 package exchange.analyzer.model;
 
+import com.oanda.v20.instrument.Candlestick;
+
+
+
 public class CandleModel {
 
     private String instrument;
     private String tf;
+
+    private String timestamp;
 
 
     private double low;
     private double hight;
     private double open;
     private double close;
+
+    public CandleModel(Candlestick candelOanda){
+        setTf(candelOanda.getTime().toString());
+        setClose(candelOanda.getMid().getC().doubleValue());
+        setOpen(candelOanda.getMid().getO().doubleValue());
+        setHight(candelOanda.getMid().getH().doubleValue());
+        setLow(candelOanda.getMid().getL().doubleValue());
+    }
 
     public double getLow() {
         return low;
