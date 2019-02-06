@@ -4,12 +4,10 @@ import com.oanda.v20.instrument.Candlestick;
 import com.oanda.v20.instrument.CandlestickGranularity;
 import com.oanda.v20.instrument.InstrumentCandlesRequest;
 import com.oanda.v20.instrument.InstrumentCandlesResponse;
-import com.oanda.v20.primitives.DateTime;
 import com.oanda.v20.primitives.InstrumentName;
 import exchange.analyzer.configuration.common.constants.BasicConstant;
 import exchange.analyzer.configuration.common.constants.ScheduleConstants;
 import exchange.analyzer.model.Candle;
-import exchange.analyzer.model.CandleModel;
 import exchange.analyzer.priceaction.StartPriceAction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
