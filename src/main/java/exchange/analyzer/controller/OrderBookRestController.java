@@ -1,23 +1,18 @@
 package exchange.analyzer.controller;
 
-import exchange.analyzer.model.charts.OrderBookChart;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @RequestMapping("orderbook")
 public class OrderBookRestController {
 
-	@Autowired
-	private OrderBookChartStorage orderBookChartStorage;
 
 	@ResponseBody
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("charts")
-	public List<OrderBookChart> getCharts() {
+	public void getCharts() {
 //		StringBuilder res = new StringBuilder();
 //
 //		Gson gson = new Gson();
@@ -26,6 +21,6 @@ public class OrderBookRestController {
 //			res.append(adapter.toJson(chart));
 //		}
 
-		return new ArrayList<>(orderBookChartStorage.getOrderBookChartMap().values());
+	//	return new ArrayList<>(orderBookChartStorage.getOrderBookChartMap().values());
 	}
 }

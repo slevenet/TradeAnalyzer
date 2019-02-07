@@ -1,12 +1,14 @@
 package exchange.analyzer.priceaction.classifier;
 
 import exchange.analyzer.model.Candle;
+import org.springframework.stereotype.Component;
 
 
 import java.util.List;
 
 import static java.lang.StrictMath.abs;
 
+@Component
 public class DodjiClassifier implements Classifier{
     @Override
     public boolean is(List<Candle> candles) {

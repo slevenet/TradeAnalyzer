@@ -1,3 +1,4 @@
+/*
 package exchange.analyzer.shedulers;
 
 import com.oanda.v20.ExecuteException;
@@ -38,3 +39,4 @@ public class OrderBookComponentSheduler extends OandaComponentSheduler {
         });
     }
 }
+*/

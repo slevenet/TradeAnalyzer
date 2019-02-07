@@ -1,4 +1,4 @@
-package exchange.analyzer;
+package exchange.analyzer.utils;
 
 
 import static exchange.analyzer.configuration.common.constants.BasicConstant.*;

@@ -2,7 +2,7 @@ package exchange.analyzer.service.impl;
 
 
 
-import exchange.analyzer.model.charts.ChartPatternModel;
+import exchange.analyzer.entity.Signal;
 import exchange.analyzer.repository.SignalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ public class SignalServiceImpl  {
 
 
 
-    public void addSignal(ChartPatternModel chartPattern) {
+    public void addSignal(Signal signal) {
 
     }
 
