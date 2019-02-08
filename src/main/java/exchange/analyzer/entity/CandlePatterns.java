@@ -19,4 +19,44 @@ public class CandlePatterns {
     private String tf;
     private String type;
     private BigInteger parent_id;
+
+    public BigInteger getId() {
+        return id;
+    }
+
+    public void setId(BigInteger id) {
+        this.id = id;
+    }
+
+    public String getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(String timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
+    public String getTf() {
+        return tf;
+    }
+
+    public void setTf(String tf) {
+        this.tf = tf;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public BigInteger getParent_id() {
+        return parent_id;
+    }
+
+    public void setParent_id(BigInteger parent_id) {
+        this.parent_id = parent_id;
+    }
 }
