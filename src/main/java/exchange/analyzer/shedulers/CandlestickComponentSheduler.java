@@ -31,8 +31,7 @@ public class CandlestickComponentSheduler extends OandaComponentSheduler {
         BasicConstant.SUPPORTED_INSTRUMENT.forEach(currency ->
         {
             InstrumentCandlesRequest request = new InstrumentCandlesRequest(new InstrumentName(currency));
-            request.setPrice(ScheduleConstants.price);
-            request.setCount(10L);
+            request.setPrice(ScheduleConstants.price).setCount(10L);
             ScheduleConstants.GRANULARITIES.forEach(requestedGranularity ->
             {
                 CandlestickGranularity granularity = CandlestickGranularity.valueOf(requestedGranularity);
