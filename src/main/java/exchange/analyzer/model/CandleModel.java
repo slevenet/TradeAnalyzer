@@ -13,7 +13,7 @@ public class CandleModel {
 
 
     private double low;
-    private double hight;
+    private double high;
     private double open;
     private double close;
 
@@ -21,7 +21,7 @@ public class CandleModel {
         setTf(candelOanda.getTime().toString());
         setClose(candelOanda.getMid().getC().doubleValue());
         setOpen(candelOanda.getMid().getO().doubleValue());
-        setHight(candelOanda.getMid().getH().doubleValue());
+        setHigh(candelOanda.getMid().getH().doubleValue());
         setLow(candelOanda.getMid().getL().doubleValue());
     }
 
@@ -33,12 +33,12 @@ public class CandleModel {
         this.low = low;
     }
 
-    public double getHight() {
-        return hight;
+    public double getHigh() {
+        return high;
     }
 
-    public void setHight(double hight) {
-        this.hight = hight;
+    public void setHigh(double high) {
+        this.high = high;
     }
 
     public double getOpen() {
