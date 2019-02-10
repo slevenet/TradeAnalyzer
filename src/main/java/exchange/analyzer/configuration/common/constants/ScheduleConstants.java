@@ -11,7 +11,7 @@ final public class ScheduleConstants {
             MINUTE_FACTOR = SECOND_FACTOR * 60;
 
     static final public String price = "ABM";
-    static final public List<String> GRANULARITIES = new ArrayList<>(Arrays.asList("M15", "M30", "H1", "H4", "D"));
+    static final public List<String> GRANULARITIES = new ArrayList<>(Arrays.asList("H4", "H3", "H1", "H4", "D"));
     static final public List<Integer> PATTERN_PERIODS = new ArrayList<>(Arrays.asList(900, 1800, 3600, 14400, 86400));
 
 }

@@ -13,6 +13,9 @@ public class StartPriceAction {
     @Autowired
     List<Classifier> classifiers;
     public void process(List<Candle> candles){
-        classifiers.stream().map(c -> c.is(candles));
+        System.out.println(candles.get(0).getTf());
+        System.out.println(candles.get(0).getCandleType());
+        System.out.println(candles.get(0).getInstrument());
+        classifiers.get(0).is(candles);
     }
 }
