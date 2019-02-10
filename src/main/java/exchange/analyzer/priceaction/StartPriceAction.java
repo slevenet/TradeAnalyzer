@@ -16,6 +16,6 @@ public class StartPriceAction {
         System.out.println(candles.get(0).getTf());
         System.out.println(candles.get(0).getCandleType());
         System.out.println(candles.get(0).getInstrument());
-        classifiers.stream().map(c -> c.is(candles));
+        classifiers.get(0).is(candles);
     }
 }

@@ -14,24 +14,24 @@ import static java.lang.StrictMath.abs;
 @Component
 public class DodjiClassifier implements Classifier{
     @Override
-    public boolean is(List<Candle> candles) {
-       // candles.get(candles.size()).getClose()
-        // candles.get(candles.size() - 1).getClose()
-        return false;
+    public void is(List<Candle> candles) {
+        if (isDodjiBody(candles.get(0)) && isDodjiShadow(candles.get(0)))
+            System.out.println("Dodji - " + candles.get(0).getTf() + candles.get(0).getInstrument());
+
     }
 
     private boolean isDodjiBody(Candle candle){
-        if(abs(candle.getClose() - candle.getOpen()) <= 10)
+        if(candle.getBodySize() <= 10)
             return true;
         return false;
     }
 
     private boolean isDodjiShadow(Candle candle){
-        double shadowLow = candle.getOpen() - candle.getLow();
-        double shadowHight = candle.getOpen() - candle.getHight();
-
-
-        if(abs(shadowLow - shadowHight) <= 7)
+        if ((candle.getLowShadow() >= (candle.getBodySize() * 3)) ||
+                (candle.getTopShadow() >= (candle.getBodySize() * 3)))
+            return true;
+        if ((candle.getLowShadow() >= (candle.getBodySize() * 2)) &&
+                (candle.getTopShadow() >= (candle.getBodySize() * 2)))
             return true;
         return false;
     }

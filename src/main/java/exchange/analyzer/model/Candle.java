@@ -2,6 +2,9 @@ package exchange.analyzer.model;
 
 import com.oanda.v20.instrument.Candlestick;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 import static exchange.analyzer.configuration.common.constants.BasicConstant.*;
 import static exchange.analyzer.configuration.common.constants.BasicConstant.BULLISH;
 import static java.lang.StrictMath.abs;
@@ -17,7 +20,8 @@ public class Candle extends CandleModel {
     }
 
     public  int getPoints(double price){
-        return (int) (TABLEONEPOINTINT.get(getInstrument()) * price);
+        double roundedPrice = new BigDecimal(price).setScale(5, RoundingMode.CEILING).doubleValue();
+        return (int)(TABLEONEPOINTINT.get(getInstrument()) * roundedPrice);
     }
 
     public int getCandleType(){

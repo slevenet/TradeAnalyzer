@@ -26,7 +26,7 @@ final public class BasicConstant {
         put("XAU_USD",0.01);
     }};
 
-    public static final Map<String, Double> TABLEONEPOINTINT = new HashMap() {{
+    public static final Map<String, Integer> TABLEONEPOINTINT = new HashMap() {{
         put("EUR_USD",10000);
         put("AUD_USD",10000);
         put("EUR_AUD",10000);
