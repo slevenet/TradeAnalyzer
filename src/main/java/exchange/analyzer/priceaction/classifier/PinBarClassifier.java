@@ -6,7 +6,7 @@ import java.util.List;
 
 public class PinBarClassifier implements Classifier {
 	@Override
-	public boolean is(List<Candle> candles) {
+	public void is(List<Candle> candles) {
 		for (Candle candle : candles)
 		{
 			double high = candle.getHigh();
@@ -15,10 +15,10 @@ public class PinBarClassifier implements Classifier {
 			double close = candle.getClose();
 
 			if (isPinBar(high, low, open, close))
-				return true;
+				; // save into db
 		}
 
-		return false;
+		// save into db false
 	}
 
 	private boolean isPinBar(double high, double low, double open, double close) {

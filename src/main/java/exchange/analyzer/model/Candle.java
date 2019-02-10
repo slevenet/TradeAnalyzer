@@ -32,9 +32,9 @@ public class Candle extends CandleModel {
 
     public int getTopShadow(){
         if (getCandleType() == BEARISH){
-            return getPoints(this.getHight() - this.getOpen());
+            return getPoints(this.getHigh() - this.getOpen());
         }
-         return getPoints(this.getHight() - this.getClose());
+         return getPoints(this.getHigh() - this.getClose());
     }
 
     public int getLowShadow(){
