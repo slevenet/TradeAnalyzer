@@ -1,6 +1,11 @@
 package exchange.analyzer.shedulers;
 
-public interface Sheduler {
+import com.oanda.v20.Context;
+import org.springframework.beans.factory.annotation.Autowired;
 
-    void process();
+public abstract class Sheduler {
+    @Autowired
+    protected Context context;
+
+    abstract protected void process();
 }

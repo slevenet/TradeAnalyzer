@@ -1,6 +1,6 @@
 package exchange.analyzer.shedulers;
 
-import com.oanda.v20.instrument.Candlestick;
+
 import com.oanda.v20.instrument.CandlestickGranularity;
 import com.oanda.v20.instrument.InstrumentCandlesRequest;
 import com.oanda.v20.instrument.InstrumentCandlesResponse;
@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class CandlestickComponentSheduler extends OandaComponentSheduler {
+public class CandlestickComponentSheduler extends Sheduler {
 
     private static final Logger logger = LoggerFactory.getLogger(CandlestickComponentSheduler.class);
 
@@ -40,7 +40,7 @@ public class CandlestickComponentSheduler extends OandaComponentSheduler {
 
                 try {
                     ExternalCandleWrapper externalCandleWrapper = new ExternalCandleWrapper();
-                    InstrumentCandlesResponse candlesResponse = oandaContext.getContext().instrument.candles(request);
+                    InstrumentCandlesResponse candlesResponse = context.instrument.candles(request);
                     externalCandleWrapper.setCandlestick(candlesResponse.getCandles());
                     externalCandleWrapper.setInstrument(currency);
                     externalCandleWrapper.setTf(requestedGranularity);
