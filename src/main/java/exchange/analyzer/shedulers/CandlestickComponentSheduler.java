@@ -8,6 +8,7 @@ import com.oanda.v20.primitives.InstrumentName;
 import exchange.analyzer.configuration.common.constants.BasicConstant;
 import exchange.analyzer.configuration.common.constants.ScheduleConstants;
 import exchange.analyzer.model.Candle;
+import exchange.analyzer.model.ExternalCandleWrapper;
 import exchange.analyzer.priceaction.StartPriceAction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,8 +39,12 @@ public class CandlestickComponentSheduler extends OandaComponentSheduler {
                 request.setGranularity(granularity);
 
                 try {
+                    ExternalCandleWrapper externalCandleWrapper = new ExternalCandleWrapper();
                     InstrumentCandlesResponse candlesResponse = oandaContext.getContext().instrument.candles(request);
-                    startPriceAction.process(getCandlesFromOandaCandels(candlesResponse.getCandles()));
+                    externalCandleWrapper.setCandlestick(candlesResponse.getCandles());
+                    externalCandleWrapper.setInstrument(currency);
+                    externalCandleWrapper.setTf(requestedGranularity);
+                    startPriceAction.process(getCandlesFromOandaCandels(externalCandleWrapper));
                 } catch (Exception e) {
                     logger.error("Error during candlestick task", e);
                 }
@@ -47,7 +52,15 @@ public class CandlestickComponentSheduler extends OandaComponentSheduler {
         });
     }
 
-    private List<Candle> getCandlesFromOandaCandels(List<Candlestick> candlesticks){
-      return candlesticks.stream().map(Candle::new).collect(Collectors.toList());
+    private List<Candle> getCandlesFromOandaCandels(ExternalCandleWrapper candlesticks){
+      return candlesticks.getCandlestick().stream()
+              .map(Candle::new)
+              .collect(Collectors.toList())
+                .stream()
+                .peek(candle -> {
+                    candle.setTf(candlesticks.getTf());
+                    candle.setInstrument((candlesticks.getInstrument()));
+                })
+              .collect(Collectors.toList());
     }
 }

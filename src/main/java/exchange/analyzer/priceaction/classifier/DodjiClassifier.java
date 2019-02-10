@@ -8,6 +8,9 @@ import java.util.List;
 
 import static java.lang.StrictMath.abs;
 
+
+//body is not more 10p
+//shadow: or each of the shadows are more body * 2, or one of it is more body * 3
 @Component
 public class DodjiClassifier implements Classifier{
     @Override
@@ -18,7 +21,7 @@ public class DodjiClassifier implements Classifier{
     }
 
     private boolean isDodjiBody(Candle candle){
-        if(abs(candle.getClose() - candle.getOpen()) <= 5)
+        if(abs(candle.getClose() - candle.getOpen()) <= 10)
             return true;
         return false;
     }
@@ -26,6 +29,7 @@ public class DodjiClassifier implements Classifier{
     private boolean isDodjiShadow(Candle candle){
         double shadowLow = candle.getOpen() - candle.getLow();
         double shadowHight = candle.getOpen() - candle.getHight();
+
 
         if(abs(shadowLow - shadowHight) <= 7)
             return true;
