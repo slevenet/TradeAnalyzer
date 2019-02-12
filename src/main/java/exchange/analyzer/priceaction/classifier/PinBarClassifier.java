@@ -1,14 +1,18 @@
 package exchange.analyzer.priceaction.classifier;
 
 import exchange.analyzer.model.Candle;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.TreeSet;
 
+@Component
 public class PinBarClassifier implements Classifier {
 	@Override
-	public void is(List<Candle> candles) {
-		for (Candle candle : candles)
-		{
+	public void is(TreeSet<Candle> candles) {
+		Candle candle = candles.last();
+
 			double high = candle.getHigh();
 			double low = candle.getLow();
 			double open = candle.getOpen();
@@ -16,7 +20,7 @@ public class PinBarClassifier implements Classifier {
 
 			if (isPinBar(high, low, open, close))
 				; // save into db
-		}
+
 
 		// save into db false
 	}

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 
 import java.util.List;
+import java.util.TreeSet;
 
 import static java.lang.StrictMath.abs;
 
@@ -14,9 +15,10 @@ import static java.lang.StrictMath.abs;
 @Component
 public class DodjiClassifier implements Classifier{
     @Override
-    public void is(List<Candle> candles) {
-        if (isDodjiBody(candles.get(0)) && isDodjiShadow(candles.get(0)))
-            System.out.println("Dodji - " + candles.get(0).getTf() + candles.get(0).getInstrument());
+    public void is(TreeSet<Candle> candles) {
+        Candle candle = candles.last();
+        if (isDodjiBody(candle) && isDodjiShadow(candle))
+            System.out.println("Dodji - " + candle.getTf() + candle.getInstrument());
 
     }
 

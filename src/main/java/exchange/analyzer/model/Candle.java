@@ -4,6 +4,7 @@ import com.oanda.v20.instrument.Candlestick;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.ParseException;
 
 import static exchange.analyzer.configuration.common.constants.BasicConstant.*;
 import static exchange.analyzer.configuration.common.constants.BasicConstant.BULLISH;
@@ -11,7 +12,7 @@ import static java.lang.StrictMath.abs;
 
 public class Candle extends CandleModel {
 
-    public Candle(Candlestick candelOanda) {
+    public Candle(Candlestick candelOanda)  {
         super(candelOanda);
     }
 

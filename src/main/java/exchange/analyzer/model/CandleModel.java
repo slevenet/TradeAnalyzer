@@ -2,6 +2,10 @@ package exchange.analyzer.model;
 
 import com.oanda.v20.instrument.Candlestick;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class CandleModel {
@@ -9,7 +13,7 @@ public class CandleModel {
     private String instrument;
     private String tf;
 
-    private String timestamp;
+    private Date  timestamp;
 
 
     private double low;
@@ -17,7 +21,15 @@ public class CandleModel {
     private double open;
     private double close;
 
-    public CandleModel(Candlestick candelOanda){
+
+    public CandleModel(Candlestick candelOanda) {
+        String timestamp = candelOanda.getTime().toString().replace("T", " ");
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        try {
+            setTimestamp(format.parse(timestamp));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         setTf(candelOanda.getTime().toString());
         setClose(candelOanda.getMid().getC().doubleValue());
         setOpen(candelOanda.getMid().getO().doubleValue());
@@ -73,5 +85,13 @@ public class CandleModel {
 
     public void setTf(String tf) {
         this.tf = tf;
+    }
+
+    public Date getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
     }
 }
