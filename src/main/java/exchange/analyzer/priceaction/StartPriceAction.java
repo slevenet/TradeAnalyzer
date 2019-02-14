@@ -14,6 +14,7 @@ public class StartPriceAction {
     @Autowired
     List<Classifier> classifiers;
     public void process(TreeSet<Candle> candles){
+        candles.size();
         classifiers.get(0).is(candles);
     }
 }
