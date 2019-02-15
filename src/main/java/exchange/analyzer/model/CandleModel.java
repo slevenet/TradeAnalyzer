@@ -2,6 +2,8 @@ package exchange.analyzer.model;
 
 import com.oanda.v20.instrument.Candlestick;
 
+import java.time.LocalDateTime;
+
 
 
 public class CandleModel {
@@ -9,7 +11,7 @@ public class CandleModel {
     private String instrument;
     private String tf;
 
-    private String timestamp;
+    private LocalDateTime timestamp;
 
 
     private double low;
@@ -17,7 +19,10 @@ public class CandleModel {
     private double open;
     private double close;
 
-    public CandleModel(Candlestick candelOanda){
+
+    public CandleModel(Candlestick candelOanda) {
+        String timestamp = candelOanda.getTime().toString().replace("Z", "");
+        setTimestamp(LocalDateTime.parse(timestamp));
         setTf(candelOanda.getTime().toString());
         setClose(candelOanda.getMid().getC().doubleValue());
         setOpen(candelOanda.getMid().getO().doubleValue());
@@ -73,5 +78,13 @@ public class CandleModel {
 
     public void setTf(String tf) {
         this.tf = tf;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
     }
 }

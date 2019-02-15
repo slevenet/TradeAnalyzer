@@ -8,31 +8,29 @@ import com.oanda.v20.primitives.InstrumentName;
 import exchange.analyzer.configuration.common.constants.BasicConstant;
 import exchange.analyzer.configuration.common.constants.ScheduleConstants;
 import exchange.analyzer.model.Candle;
+import exchange.analyzer.model.CandleComporator;
 import exchange.analyzer.model.ExternalCandleWrapper;
 import exchange.analyzer.priceaction.StartPriceAction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 
-import java.util.List;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
-@Component
-public class CandlestickComponentSheduler extends Sheduler {
+
+public abstract class CandlestickComponentSheduler extends Sheduler {
 
     private static final Logger logger = LoggerFactory.getLogger(CandlestickComponentSheduler.class);
 
     @Autowired
     private StartPriceAction startPriceAction;
 
-    @Scheduled(fixedRate = 60 * ScheduleConstants.MINUTE_FACTOR)
-    public void process(){
+    public void getCandles(Long size){
         BasicConstant.SUPPORTED_INSTRUMENT.forEach(currency ->
         {
             InstrumentCandlesRequest request = new InstrumentCandlesRequest(new InstrumentName(currency));
-            request.setPrice(ScheduleConstants.price).setCount(10L);
+            request.setPrice(ScheduleConstants.price).setCount(size);
             ScheduleConstants.GRANULARITIES.forEach(requestedGranularity ->
             {
                 CandlestickGranularity granularity = CandlestickGranularity.valueOf(requestedGranularity);
@@ -52,7 +50,7 @@ public class CandlestickComponentSheduler extends Sheduler {
         });
     }
 
-    private List<Candle> getCandlesFromOandaCandels(ExternalCandleWrapper candlesticks){
+    private TreeSet<Candle> getCandlesFromOandaCandels(ExternalCandleWrapper candlesticks) {
       return candlesticks.getCandlestick().stream()
               .map(Candle::new)
               .collect(Collectors.toList())
@@ -61,6 +59,7 @@ public class CandlestickComponentSheduler extends Sheduler {
                     candle.setTf(candlesticks.getTf());
                     candle.setInstrument((candlesticks.getInstrument()));
                 })
-              .collect(Collectors.toList());
+              .collect(Collectors.toCollection(() ->
+                      new TreeSet<Candle>(new CandleComporator())));
     }
 }

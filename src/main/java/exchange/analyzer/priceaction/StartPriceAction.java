@@ -6,16 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.TreeSet;
 
 @Component
 public class StartPriceAction {
 
     @Autowired
     List<Classifier> classifiers;
-    public void process(List<Candle> candles){
-        System.out.println(candles.get(0).getTf());
-        System.out.println(candles.get(0).getCandleType());
-        System.out.println(candles.get(0).getInstrument());
+    public void process(TreeSet<Candle> candles){
+        candles.size();
         classifiers.get(0).is(candles);
     }
 }
