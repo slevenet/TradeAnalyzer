@@ -1,6 +1,6 @@
 package exchange.analyzer.entity;
 
-import exchange.analyzer.CandlePatternsListner;
+import exchange.analyzer.CandlePatternsListener;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import java.math.BigInteger;
 
 @Entity
-@EntityListeners(CandlePatternsListner.class)
+@EntityListeners(CandlePatternsListener.class)
 @Table(name = "CANDLEPATTERNS")
 public class CandlePatterns {
 
