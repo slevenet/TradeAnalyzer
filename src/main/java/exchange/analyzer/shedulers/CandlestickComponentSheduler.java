@@ -27,45 +27,16 @@ public abstract class CandlestickComponentSheduler extends Sheduler {
     private static final Logger logger = LoggerFactory.getLogger(CandlestickComponentSheduler.class);
 
     @Autowired
-    private StartPriceAction startPriceAction;
-
-    @Autowired
-    private RestTemplate restTemplate;
+    protected StartPriceAction startPriceAction;
 
     public void getCandles(Long size){
         BasicConstant.SUPPORTED_INSTRUMENT.forEach(currency ->
         {
-            InstrumentCandlesRequest request = new InstrumentCandlesRequest(new InstrumentName(currency));
-            request.setPrice(ScheduleConstants.price).setCount(size);
             ScheduleConstants.GRANULARITIES.forEach(requestedGranularity ->
             {
-                CandlestickGranularity granularity = CandlestickGranularity.valueOf(requestedGranularity);
-                request.setGranularity(granularity);
+                startPriceAction.process(oandaComponent.getCandles(size,currency,requestedGranularity));
 
-                try {
-                    ExternalCandleWrapper externalCandleWrapper = new ExternalCandleWrapper();
-                    InstrumentCandlesResponse candlesResponse = context.instrument.candles(request);
-                    externalCandleWrapper.setCandlestick(candlesResponse.getCandles());
-                    externalCandleWrapper.setInstrument(currency);
-                    externalCandleWrapper.setTf(requestedGranularity);
-                    startPriceAction.process(getCandlesFromOandaCandels(externalCandleWrapper));
-                } catch (Exception e) {
-                    logger.error("Error during candlestick task", e);
-                }
             });
         });
-    }
-
-    private TreeSet<Candle> getCandlesFromOandaCandels(ExternalCandleWrapper candlesticks) {
-      return candlesticks.getCandlestick().stream()
-              .map(Candle::new)
-              .collect(Collectors.toList())
-                .stream()
-                .peek(candle -> {
-                    candle.setTf(candlesticks.getTf());
-                    candle.setInstrument((candlesticks.getInstrument()));
-                })
-              .collect(Collectors.toCollection(() ->
-                      new TreeSet<Candle>(new CandleComporator())));
     }
 }
